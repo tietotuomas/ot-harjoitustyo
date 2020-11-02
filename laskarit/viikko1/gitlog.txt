@@ -1,0 +1,122 @@
+commit 22bffd7dd0bdbb21665eb676dda54cb547606faa
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 18:33:55 2020 +0200
+
+    Remove file1, rename file2 -> file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit c9f3049ce56d9a5b122fe2df73df47eee52db691
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 18:13:43 2020 +0200
+
+    Add a new directory including 3 example files
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 452fdd773dfa92ff6b22665d889fbcbf6959125b
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:57:13 2020 +0200
+
+    Change text
+
+ eka.txt    | 5 +++--
+ kolmas.txt | 1 +
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+commit bfc914e2171de332c86b7a31600e7a483ce54d76
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:40:25 2020 +0200
+
+    Rename a file
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 241d0d50ac822ac2784a772eb7ac8ff2d7509a1e
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:38:43 2020 +0200
+
+    Delete toinen again
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 81a66739e78ddfc9640973c2a1655f6e871712d0
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:37:55 2020 +0200
+
+    Add a new file
+
+ toinen.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4f585a4cf49beb03e554040307cbf49f8384e928
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:33:22 2020 +0200
+
+    Delete file
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 068bfd39b55e9f7c837e032f3e71ee9feabbc1c8
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Mon Nov 2 17:29:47 2020 +0200
+
+    Modify text
+
+ tiedosto.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit da98df15b10339fc835c60d98890922ec9a42ea5
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Sun Nov 1 22:56:00 2020 +0200
+
+    Add a new directory
+
+ stuff/maven.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a6d98e3c9c959a28c9cdde2765e07c86d90346db
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Sun Nov 1 22:49:33 2020 +0200
+
+    muokattu tekstejä
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 76749f93380fb1025a8d526e749ba419ef34d66f
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Sun Nov 1 22:33:05 2020 +0200
+
+    lisää kolmas tekstitiedosto
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2a7337884bb1fdf819ef431efdc5a9d7e9660b99
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Sun Nov 1 22:25:15 2020 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 7200a6e176c29747c10228d98b3408643c6a3187
+Author: Tuomas <tietotuomas@gmail.com>
+Date:   Sun Nov 1 22:16:08 2020 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
