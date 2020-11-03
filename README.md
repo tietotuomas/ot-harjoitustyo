@@ -8,3 +8,5 @@ Näillä näkymin harjoitustyöni tulee olemaan **osakesuositus-generaattori** t
 
 [gitlog.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)  
 [komentorivi.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+
+#### Viikko 2
