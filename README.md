@@ -10,3 +10,4 @@ Näillä näkymin harjoitustyöni tulee olemaan **osakesuositus-generaattori** t
 [komentorivi.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 #### Viikko 2
+Vielä tekemättä.
