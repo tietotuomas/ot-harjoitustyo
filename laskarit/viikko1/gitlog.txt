@@ -120,3 +120,5 @@ Date:   Sun Nov 1 22:16:08 2020 +0200
 
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
+ 
+ Katsotaan, miten menee epäsynkkaan.
