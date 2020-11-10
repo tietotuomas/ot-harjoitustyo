@@ -6,7 +6,7 @@ Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttä
 
 ## Käyttäjät
 
-Sovelluksessa on vain yksi käyttäjärooli ("käyttäjä").
+Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä"). Myöhemmin mahdollisesti myös pääkäyttäjä.
 
 ## Käyttöliittymä
 
