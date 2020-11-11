@@ -1,13 +1,13 @@
-# Harjoittelua
-
-#### Projektin aihe
-Minulla on ideoita, mutta en ole vielä aivan *varma*, minkä niistä jalostan harjoitustyöksi.  
-Näillä näkymin harjoitustyöni tulee olemaan **osakesuositus-generaattori** tai **englannin kielen opiskelu-softa**.
+# Projektin aihe
+**IT English**
 
 #### Viikko 1
 
+[laskarit](https://github.com/tietotuomas/ot-harjoitustyo/tree/master/laskarit/viikko1)  
 [gitlog.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)  
 [komentorivi.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 #### Viikko 2
-Laskarit tehty
+[laskarit](https://github.com/tietotuomas/ot-harjoitustyo/tree/master/laskarit/viikko2)  
+[vaatimusmäärittely](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
+[tuntikirjanpito](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
