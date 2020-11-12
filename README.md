@@ -1,13 +1,8 @@
-# Projektin aihe
-**IT English**
+# IT ENGLISH
 
-#### Viikko 1
+Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttäjä valitsee sopivan vaikeustason ja sovellus arpoo käyttäjän valinnan mukaisesti joukon sanoja, jotka käyttäjä kääntää (kirjoittaen tai mahdollisesti oikean vaihtoehdoista valiten) suomesta englanniksi tai päinvastoin. Sovellus muistaa pysyväistallennuksen (ainakin aluksi tekstimuotoinen) avulla käyttäjän aikaisemmat tulokset, joiden perusteella käyttäjä voi seurata kehitystään.
 
-[laskarit](https://github.com/tietotuomas/ot-harjoitustyo/tree/master/laskarit/viikko1)  
-[gitlog.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)  
-[komentorivi.txt](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
+#### Dokumentaatio
 
-#### Viikko 2
-[laskarit](https://github.com/tietotuomas/ot-harjoitustyo/tree/master/laskarit/viikko2)  
-[vaatimusmäärittely](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
-[tuntikirjanpito](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
+[Vaatimusmäärittely](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
+[Tuntikirjanpito](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
