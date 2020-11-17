@@ -17,6 +17,7 @@ import java.util.Scanner;
  * @author aaltonet
  */
 public class Main {
+
     public static void main(String[] args) {
 
         HashMap<String, String> beginner = new HashMap<>();
@@ -61,20 +62,17 @@ public class Main {
                 correctAnswers = englishTest(beginner, commandReader, howManyQuestions);
                 System.out.println("Sait " + correctAnswers + "/" + howManyQuestions + " oikein!");
                 continue;
-            }
-            else if (komento.equals("2")) {
+            } else if (komento.equals("2")) {
                 System.out.println("Normaali vaikeustaso valittu. Käännä seuraavat sanat englanniksi:");
                 correctAnswers = englishTest(average, commandReader, howManyQuestions);
                 System.out.println("Sait " + correctAnswers + "/" + howManyQuestions + " oikein!");
                 continue;
-            }
-            else if (komento.equals("3")) {
+            } else if (komento.equals("3")) {
                 System.out.println("Vaikea vaikeustaso valittu. Käännä seuraavat sanat englanniksi:");
                 correctAnswers = englishTest(average, commandReader, howManyQuestions);
                 System.out.println("Sait " + correctAnswers + "/" + howManyQuestions + " oikein!");
-                
-            }
-            else if (komento.equals("quit")) {
+
+            } else if (komento.equals("quit")) {
                 System.out.println("Kiitos ja tervetuloa opiskelemaan uudelleen!");
                 break;
             } else {
@@ -104,4 +102,3 @@ public class Main {
 
     }
 }
-
