@@ -1,0 +1,16 @@
+computer, tietokone
+file, tiedosto
+keyboard, näppäimistö
+mouse, hiiri
+password, salasana
+printer, tulostin
+key, avain
+code, koodi
+engineer, insinööri
+page, sivu
+port, portti
+rivi, row
+firewall, palomuuri
+digital, digitaalinen
+copy, kopioida
+graphics, grafiikka

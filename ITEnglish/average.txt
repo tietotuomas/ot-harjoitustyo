@@ -1,0 +1,24 @@
+computer science, tietojenkäsittelytiede
+simulation, simulaatio
+router, reititin
+quantum computer, kvanttitietokone
+string, merkkijono
+column, sarake
+function, funktio
+hacker, hakkeri
+desktop, työpöytä
+console, konsoli
+cookie, eväste
+sound card, äänikortti
+input, syöte
+touch screen, kosketusnäyttö
+wireless, langaton
+vulnerability, haavoittuvuus
+motherboard, emolevy
+byte, tavu
+bitti, bit
+double click, kaksoisklikkaus
+backspace, askelpalautin
+server, palvelin
+driver, ajuri
+interface, rajapinta
