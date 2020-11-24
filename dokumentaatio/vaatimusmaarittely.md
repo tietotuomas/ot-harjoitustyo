@@ -45,3 +45,4 @@ Sovelluksessa on graafinen käyttöliittymä.
 - tietokantojen hyödyntäminen tallennuksessa
 - pääkäyttäjä-luokan luominen
 - pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja lisätä sanastoa
+- sanaston harjottelun rinnalle (erillinen?) muoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä
