@@ -10,7 +10,7 @@ Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä"). Myöhemmin m
 
 ## Käyttöliittymä
 
-Sovelluksessa on graafinen käyttöliittymä.
+Sovelluksessa on graafinen käyttöliittymä. (tehty)
 
 ## Perusversion toiminnallisuus
 
@@ -24,7 +24,7 @@ Sovelluksessa on graafinen käyttöliittymä.
 
 ### Kirjautumisen jälkeen
 
-- käyttäjä voi valita vaikeustason sanastolle
+- käyttäjä voi valita vaikeustason sanastolle (tehty)
   - aloittelija
   - keskiverto
   - mestari
@@ -32,14 +32,16 @@ Sovelluksessa on graafinen käyttöliittymä.
 - käyttäjä voi nähdä aikaisemmat pisteensä (oikeat vastaukset/kysymykset)
 
 - käyttäjä voi vastata kysymyssarjaan, jossa on vakio määrä käännettäviä sanoja
-  - kysymyksiin vastataan sana kerrallaan
-  - jokaisen sanan jälkeen näytetään oikea vastaus ja ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin
+  - kysymyksiin vastataan sana kerrallaan (tehty)
+  - jokaisen sanan jälkeen näytetään oikea vastaus ja ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin (tehty)
+  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus
   - sovellus antaa palautteen kysymyssarjaan vastaamisen jälkeen sekä sanallisesti että pisteiden muodossa
 
 - käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
+- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen
 - käyttäjätunnuksen lisäksi salasana
 - käyttäjälle mahdollisuus valita kysymyssarjan koko (esim. 5-20 sanan välillä)
 - tietokantojen hyödyntäminen tallennuksessa
