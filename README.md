@@ -10,7 +10,7 @@ Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttä
 
 ## Komentorivitoiminnot
 
-mvn compile exec:java -Dexec.mainClass=itenglish.Main 
+mvn compile exec:java -Dexec.mainClass=itenglish.Main  
 mvn test  
 mvn jacoco:report  
 mvn jxr:jxr checkstyle:checkstyle  
