@@ -11,4 +11,5 @@
 | 19.11 | 4    | graafisen käyttöliitymän-aihion rakentaminen JavaFX:n avulla |
 | 23.11 | 3    | sovelluslogiikan eriyttäminen |
 | 24.11 | 4    | käyttöliittymän laajentaminen suunnitelluille ominaisuuksille & Checkstylen käyttöönotto |
-| yht   | 23   |  | 
+| 24.11 | 2    | testejä & luokka/pakkauskaavio |
+| yht   | 25   |  | 
