@@ -13,4 +13,4 @@
 | 24.11 | 4    | käyttöliittymän laajentaminen suunnitelluille ominaisuuksille & Checkstylen käyttöönotto |
 | 24.11 | 2    | testejä & luokka/pakkauskaavio |
 | 26.11 | 2    | sanaston uudistusta mm. toisella kysymystyypillä |
-| yht   | 25   |  | 
+| yht   | 27  |  | 
