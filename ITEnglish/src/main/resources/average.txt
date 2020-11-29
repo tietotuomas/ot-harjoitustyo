@@ -1,0 +1,25 @@
+computer science, tietojenkäsittelytiede
+router, reititin
+quantum computer, kvanttitietokone
+string, merkkijono
+input, syöte
+vulnerability, haavoittuvuus
+byte, tavu
+backspace, askelpalautin
+driver, ajuri
+interface, rajapinta
+output, tuloste
+scaling, skaalaaminen
+subdirectory, alihakemisto
+certificate, varmenne
+cryptography, kryptografia
+access control, pääsynvalvonta
+LAN, Local Area Network
+GUI, graphical user interface
+HDD, hard disk drive
+RAM, random access memory
+IoT, Internet of Things
+API, application programming interface
+MB, megabyte
+Mb, megabit
+CLI, command line interface

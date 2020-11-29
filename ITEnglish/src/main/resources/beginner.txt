@@ -1,0 +1,27 @@
+file, tiedosto
+keyboard, näppäimistö
+password, salasana
+printer, tulostin
+key, avain
+code, koodi
+engineer, insinööri
+rivi, row
+firewall, palomuuri
+digital, digitaalinen
+copy, kopioida
+graphics, grafiikka
+simulation, simulaatio
+column, sarake
+value, arvo
+desktop, työpöytä
+hacker, hakkeri
+function, funktio
+console, konsoli
+cookie, eväste
+sound card, äänikortti
+motherboard, emolevy
+server, palvelin
+double click, kaksoisklikkaus
+wireless, langaton
+touch screen, kosketusnäyttö
+bitti, bit
