@@ -25,6 +25,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
@@ -35,11 +36,13 @@ import javafx.stage.Stage;
 public class ItEnglishUi extends Application {
 
     private ItEnglishService itEnglishService;
+ 
 
     @Override
     public void init() throws Exception {
         itEnglishService = new ItEnglishService();
         itEnglishService.readFiles();
+
     }
 
     public static void main(String[] args) {
@@ -53,7 +56,6 @@ public class ItEnglishUi extends Application {
     }
 
     public void login(Stage primaryStage) {
-
         Label infoLabel = new Label("Tervetuloa oppimaan IT-sanastoa englanniksi!"
                 + "\nKirjaudu ensiksi sisään tai luo uusi tunnus.");
         infoLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
@@ -68,7 +70,7 @@ public class ItEnglishUi extends Application {
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
-        VBox rootPane = new VBox(50);
+        VBox rootPane = new VBox(30);
 
         rootPane.setAlignment(Pos.TOP_CENTER);
         rootPane.setPadding(new Insets(10));
@@ -103,7 +105,7 @@ public class ItEnglishUi extends Application {
         rootPane.getChildren().addAll(infoLabel, layout, bottomLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
-        Scene loginScene = new Scene(rootPane, 450, 350);
+        Scene loginScene = new Scene(rootPane, 500, 350);
 
         primaryStage.setTitle("Kirjaudu");
         primaryStage.setScene(loginScene);
@@ -125,7 +127,7 @@ public class ItEnglishUi extends Application {
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
-        VBox rootPane = new VBox(50);
+        VBox rootPane = new VBox(30);
 
         rootPane.setAlignment(Pos.TOP_CENTER);
         rootPane.setPadding(new Insets(10));
@@ -153,7 +155,7 @@ public class ItEnglishUi extends Application {
         backButton.setOnAction(e -> {
             login(primaryStage);
         });
-        
+
         rootPane.getChildren().addAll(infoLabel, layout, bottomLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
@@ -166,7 +168,16 @@ public class ItEnglishUi extends Application {
 
     public void chooseMode(Stage primaryStage) {
         Label infoLabel = new Label("Valitse vaikeustaso:");
-        infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
+        infoLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
+        Label instructionsLabel = new Label("Aloittelijan vaikeustaso sisältää suomenkielisten sanojen kääntämistä"
+                + "\nsuomesta englanniksi tietotekniikan kontekstissa. "
+                + "\nEsim. tietokone -> computer."
+                + "\nKeskiverto- ja Mestari-vaikeustasot sisältävät myös englanninkielisten "
+                + "\nlyhenteiden auki kirjoittamista englanniksi."
+                + "\nEsim. PC -> personal computer.");
+//                + "\nVoit vastata ilman artikkeleita (ohjelma ei tarkista niiden oikeellisuutta). "
+//                + "\nMyöskään kirjainkoolla ei ole väliä.");
+        instructionsLabel.setFont(Font.font("Times New Roman", FontWeight.LIGHT, 12));
 
         RadioButton beginnerButton = new RadioButton("Aloittelija");
         RadioButton averageButton = new RadioButton("Keskiverto");
@@ -183,7 +194,7 @@ public class ItEnglishUi extends Application {
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
-        VBox rootPane = new VBox(50);
+        VBox rootPane = new VBox(20);
 
         rootPane.setAlignment(Pos.TOP_CENTER);
         rootPane.setPadding(new Insets(10));
@@ -216,10 +227,10 @@ public class ItEnglishUi extends Application {
 
         });
 
-        rootPane.getChildren().addAll(infoLabel, layout, bottomLink);
+        rootPane.getChildren().addAll(infoLabel, instructionsLabel, layout, bottomLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
-        Scene chooseModeScene = new Scene(rootPane, 450, 350);
+        Scene chooseModeScene = new Scene(rootPane, 500, 500);
 
         primaryStage.setTitle("Vaikeustaso");
         primaryStage.setScene(chooseModeScene);
@@ -240,7 +251,7 @@ public class ItEnglishUi extends Application {
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
-        VBox rootPane = new VBox(50);
+        VBox rootPane = new VBox(30);
 
         rootPane.setAlignment(Pos.TOP_CENTER);
         rootPane.setPadding(new Insets(10));
@@ -289,9 +300,9 @@ public class ItEnglishUi extends Application {
     public void feedback(Stage primaryStage) {
 
     }
-    
+
     @Override
     public void stop() {
-        
+
     }
 }
