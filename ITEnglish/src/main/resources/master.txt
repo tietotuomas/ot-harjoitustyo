@@ -9,17 +9,17 @@ chipset, piirisarja
 punch card, reikäkortti
 blockchain, lohkoketju
 informaatiosodankäynti, information warfare 
-SaaS, Software as a Service
-PaaS, Platform as a Service
-IaaS, Infrastructure as a Service
-SSL, Secure Socket Layer
-POM, Project Object Model
-XML, Extensible Markup Language
-EULA, End User License Agreement
-PDF, Portable Document Format
-GIF, Graphics Interchange Format
-HTML, hypertext markup language
-HTTP, hypertext transfer protocol
-URL, uniform resource locator
-URI, uniform resource identifier
-SSH, Secure Shell
+Software as a Service, SaaS
+Platform as a Service, PaaS
+Infrastructure as a Service, IaaS
+Secure Socket Layer, SSL
+Project Object Model, POM
+Extensible Markup Language, XML
+End User License Agreement, EULA
+Portable Document Format, PDF
+Graphics Interchange Format, GIF
+hypertext markup language, HTML
+hypertext transfer protocol, HTTP
+uniform resource locator, URL
+uniform resource identifier, URI
+Secure Shell, SSH
