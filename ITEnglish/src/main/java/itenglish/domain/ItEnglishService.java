@@ -38,7 +38,7 @@ public class ItEnglishService {
     public void readFiles() {
         String[] filenames = {"beginner.txt", "average.txt", "master.txt"};
         for (int i = 0; i < filenames.length; i++) {
-            String contentFile = filenames[i];
+            String contentFile = "src/main/resources/" + filenames[i];
             try (Scanner fileReader = new Scanner(new File(contentFile), "UTF-8")) {
 
                 while (fileReader.hasNextLine()) {
