@@ -5,10 +5,14 @@
  */
 package itenglish.dao;
 
+import itenglish.domain.Vocabulary;
+
 /**
  *
  * @author aaltonet
  */
-public class FileContentDao {
+public interface VocabularyDao {
+    
+    Vocabulary getByDifficulty(String name);
     
 }

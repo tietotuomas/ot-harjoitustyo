@@ -5,7 +5,13 @@
  */
 package itenglish.ui;
 
+import itenglish.dao.FileVocabularyDao;
 import itenglish.domain.ItEnglishService;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Properties;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -36,12 +42,25 @@ import javafx.stage.Stage;
 public class ItEnglishUi extends Application {
 
     private ItEnglishService itEnglishService;
- 
 
     @Override
     public void init() throws Exception {
-        itEnglishService = new ItEnglishService();
-        itEnglishService.readFiles();
+        Properties properties = new Properties();
+
+        properties.load(new FileInputStream("config.properties"));
+
+//        String beginner = properties.getProperty("beginner");
+//        String average = properties.getProperty("average");
+//        String master = properties.getProperty("master");
+
+        HashMap<String, String> files = new HashMap<>();
+        files.put("beginner", properties.getProperty("beginner"));
+        files.put("average", properties.getProperty("average"));
+        files.put("master", properties.getProperty("master"));
+        FileVocabularyDao vocabularyDao = new FileVocabularyDao(files);
+
+        itEnglishService = new ItEnglishService(vocabularyDao);
+//        itEnglishService.readFiles();
 
     }
 
@@ -238,10 +257,10 @@ public class ItEnglishUi extends Application {
     }
 
     public void study(Stage primaryStage, String difficulty, String message) {
-        Label infoLabel = new Label(message
-                + "\nKäännä englanniksi:");
-        infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
         Label wordLabel = new Label(itEnglishService.randomWord(difficulty));
+        Label infoLabel = new Label(message + "\n" + itEnglishService.infoText(wordLabel.getText()));
+        infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
+        
         wordLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
 
         TextField userInput = new TextField();
