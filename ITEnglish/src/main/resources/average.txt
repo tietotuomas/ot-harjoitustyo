@@ -14,12 +14,13 @@ subdirectory, alihakemisto
 certificate, varmenne
 cryptography, kryptografia
 access control, pääsynvalvonta
-LAN, Local Area Network
-GUI, graphical user interface
-HDD, hard disk drive
-RAM, random access memory
-IoT, Internet of Things
-API, application programming interface
-MB, megabyte
-Mb, megabit
-CLI, command line interface
+Local Area Network, LAN
+graphical user interface, GUI
+hard disk drive, HDD
+random access memory, RAM
+personal computer, PC
+Internet of Things, IoT
+application programming interface, API
+megabyte, MB
+megabit, Mb
+command line interface, CLI
