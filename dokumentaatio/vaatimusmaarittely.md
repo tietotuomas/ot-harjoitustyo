@@ -10,7 +10,7 @@ Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä"). Myöhemmin m
 
 ## Käyttöliittymä
 
-Sovelluksessa on graafinen käyttöliittymä. (**tehty alustava versio**)
+Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä**)
 
 ## Perusversion toiminnallisuus
 
@@ -24,27 +24,29 @@ Sovelluksessa on graafinen käyttöliittymä. (**tehty alustava versio**)
 
 ### Kirjautumisen jälkeen
 
-- käyttäjä voi valita vaikeustason sanastolle (**tehty**)
+- käyttäjä voi valita vaikeustason sanastolle
   - aloittelija
   - keskiverto
   - mestari
  
 - käyttäjä voi nähdä aikaisemmat pisteensä (oikeat vastaukset/kysymykset)
 
-- käyttäjä voi vastata kysymyssarjaan, jossa on vakio määrä käännettäviä sanoja
-  - kysymyksiin vastataan sana kerrallaan (**tehty**)
-  - jokaisen sanan jälkeen ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin (**tehty**)
-  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus
+- käyttäjä voi vastata kysymyssarjaan, jossa on vakio määrä (5, 10 tai kaikki) käännettäviä sanoja
+  - kysymyksiin vastataan sana kerrallaan
+  - kysymykset arvotaan satunnaisesti
+  - kukin kysymys esiintyy kysymyssarjassa korkeintaan kerran
+  - jokaisen sanan jälkeen ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin 
+  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus (**tehty**)
   - sovellus antaa palautteen kysymyssarjaan vastaamisen jälkeen sekä sanallisesti että pisteiden muodossa
 
 - käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
-- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen
+- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen (**tehty osittain**)
 - käyttäjätunnuksen lisäksi salasana
 - käyttäjälle mahdollisuus valita kysymyssarjan koko (esim. 5-20 sanan välillä)
 - tietokantojen hyödyntäminen tallennuksessa
 - pääkäyttäjä-luokan luominen
 - pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja lisätä sanastoa
-- sanaston harjottelun rinnalle (erillinen?) muoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä
+- sanaston harjoittelun rinnalle toinen kysymysmuoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä (**tehty**) 
