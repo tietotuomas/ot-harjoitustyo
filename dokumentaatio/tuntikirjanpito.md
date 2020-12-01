@@ -15,4 +15,5 @@
 | 26.11 | 2    | sanaston uudistusta mm. toisella kysymystyypillä |
 | 30.11 | 5    | perehtymistä dao-malliin ja sen osittainen implementointi |
 | 1.12  | 5    | dao-mallin implementointia, koodin siistimistä/korjailua ja pieniä lisäominaisuuksia sovellukseen |
-| yht   | 37   |  | 
+| 1.12  | 3    | testien luontia, jar & release |
+| yht   | 40   |  | 
