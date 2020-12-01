@@ -1,25 +1,25 @@
-checksum, tarkistussumma
-heap, keko
-augmented reality, lisätty todellisuus
-neural network, neuroverkko
-semaphore, semafori
-qubit, kubitti
-embedded, sulautettu
-chipset, piirisarja
-punch card, reikäkortti
-blockchain, lohkoketju
+tarkistussumma, checksum
+keko, heap
+lisätty todellisuus, augmented reality
+neuroverkko, neural network
+semafori, semaphore
+kubitti, qubit
+sulautettu, embedded
+piirisarja, chipset
+reikäkortti, punch card
+lohkoketju, blockchain
 informaatiosodankäynti, information warfare 
-Software as a Service, SaaS
-Platform as a Service, PaaS
-Infrastructure as a Service, IaaS
-Secure Socket Layer, SSL
-Project Object Model, POM
-Extensible Markup Language, XML
-End User License Agreement, EULA
-Portable Document Format, PDF
-Graphics Interchange Format, GIF
-hypertext markup language, HTML
-hypertext transfer protocol, HTTP
-uniform resource locator, URL
-uniform resource identifier, URI
-Secure Shell, SSH
+SaaS, Software as a Service
+PaaS, Platform as a Service
+IaaS, Infrastructure as a Service
+SSL, Secure Socket Layer
+POM, Project Object Model
+XML, Extensible Markup Language
+EULA, End User License Agreement
+PDF, Portable Document Format
+GIF, Graphics Interchange Format
+HTML, Hypertext Markup Language
+HTTP, Hypertext Markup Language 
+URL, Uniform Resource Locator
+URI, Uniform Resource Identifier
+SSH, Secure Shell
