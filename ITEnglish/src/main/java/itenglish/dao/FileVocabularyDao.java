@@ -25,20 +25,10 @@ public class FileVocabularyDao implements VocabularyDao {
         this.vocabularies = new ArrayList<>();
         this.files = files;
         loadFiles(files);
-//        try {
-//            Scanner reader = new Scanner(new File(file));
-//            while (reader.hasNextLine()) {
-//                String[] parts = reader.nextLine().split(";");
-//                User u = new User(parts[0], parts[1]);
-//                users.add(u);
-//            }
-//        } catch (Exception e) {
-//            FileWriter writer = new FileWriter(new File(file));
-//            writer.close();
     }
-    
+
     public void loadFiles(HashMap<String, String> files) {
-                
+
         for (String difficulty : files.keySet()) {
             Vocabulary vocabulary = new Vocabulary(difficulty);
             try (Scanner fileReader = new Scanner(new File(files.get(difficulty)), "UTF-8")) {
@@ -50,20 +40,17 @@ public class FileVocabularyDao implements VocabularyDao {
                     }
                     String[] parts = row.split(",");
 
-                    String english = parts[0].trim().toLowerCase();
-                    String finnish = parts[1].trim().toLowerCase();
-                    vocabulary.getVocabulary().put(english, finnish);
+                    String question = parts[0].trim();
+                    String answer = parts[1].trim();
+                    vocabulary.getVocabulary().put(question, answer);
                 }
             } catch (Exception e) {
                 System.out.println("Virhe: " + e.getMessage());
             }
             this.vocabularies.add(vocabulary);
-            System.out.println("TOIMII");
         }
 
     }
-        
-    
 
     @Override
     public Vocabulary getByDifficulty(String difficulty) {

@@ -49,10 +49,6 @@ public class ItEnglishUi extends Application {
 
         properties.load(new FileInputStream("config.properties"));
 
-//        String beginner = properties.getProperty("beginner");
-//        String average = properties.getProperty("average");
-//        String master = properties.getProperty("master");
-
         HashMap<String, String> files = new HashMap<>();
         files.put("beginner", properties.getProperty("beginner"));
         files.put("average", properties.getProperty("average"));
@@ -60,7 +56,6 @@ public class ItEnglishUi extends Application {
         FileVocabularyDao vocabularyDao = new FileVocabularyDao(files);
 
         itEnglishService = new ItEnglishService(vocabularyDao);
-//        itEnglishService.readFiles();
 
     }
 
@@ -201,15 +196,30 @@ public class ItEnglishUi extends Application {
         RadioButton beginnerButton = new RadioButton("Aloittelija");
         RadioButton averageButton = new RadioButton("Keskiverto");
         RadioButton masterButton = new RadioButton("Mestari");
+        RadioButton fiveButton = new RadioButton("5 satunnaista");
+        RadioButton tenButton = new RadioButton("10 satunnaista");
+        RadioButton allButton = new RadioButton("Kaikki");
         Button confirmButton = new Button("Valitse");
         Button logOutButton = new Button("Kirjaudu ulos");
 
-        ToggleGroup radioGroup = new ToggleGroup();
+        ToggleGroup setDifficulty = new ToggleGroup();
 
-        beginnerButton.setToggleGroup(radioGroup);
-        averageButton.setToggleGroup(radioGroup);
-        masterButton.setToggleGroup(radioGroup);
+        beginnerButton.setToggleGroup(setDifficulty);
+        averageButton.setToggleGroup(setDifficulty);
+        masterButton.setToggleGroup(setDifficulty);
         beginnerButton.setSelected(true);
+
+        beginnerButton.setToggleGroup(setDifficulty);
+        averageButton.setToggleGroup(setDifficulty);
+        masterButton.setToggleGroup(setDifficulty);
+        beginnerButton.setSelected(true);
+
+        ToggleGroup setNumber = new ToggleGroup();
+
+        fiveButton.setToggleGroup(setNumber);
+        tenButton.setToggleGroup(setNumber);
+        allButton.setToggleGroup(setNumber);
+        fiveButton.setSelected(true);
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
@@ -224,7 +234,11 @@ public class ItEnglishUi extends Application {
         layout.add(beginnerButton, 0, 0);
         layout.add(averageButton, 1, 0);
         layout.add(masterButton, 2, 0);
-        layout.add(confirmButton, 2, 2);
+        layout.add(fiveButton, 0, 2);
+        layout.add(tenButton, 1, 2);
+        layout.add(allButton, 2, 2);
+        layout.add(confirmButton, 2, 4);
+        
 
         layout.setVgap(10);
         layout.setHgap(10);
@@ -234,7 +248,7 @@ public class ItEnglishUi extends Application {
         layout.setBackground(new Background(new BackgroundFill(Color.DARKGREY, null, null)));
 
         confirmButton.setOnAction(e -> {
-            RadioButton selectedRadioButton = (RadioButton) radioGroup.getSelectedToggle();
+            RadioButton selectedRadioButton = (RadioButton) setDifficulty.getSelectedToggle();
             String difficulty = selectedRadioButton.getText();
             String message = "Valitsit vaikeustason " + difficulty + ".";
             study(primaryStage, difficulty, message);
@@ -249,7 +263,7 @@ public class ItEnglishUi extends Application {
         rootPane.getChildren().addAll(infoLabel, instructionsLabel, layout, bottomLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
-        Scene chooseModeScene = new Scene(rootPane, 500, 500);
+        Scene chooseModeScene = new Scene(rootPane, 500, 400);
 
         primaryStage.setTitle("Vaikeustaso");
         primaryStage.setScene(chooseModeScene);
@@ -260,7 +274,7 @@ public class ItEnglishUi extends Application {
         Label wordLabel = new Label(itEnglishService.randomWord(difficulty));
         Label infoLabel = new Label(message + "\n" + itEnglishService.infoText(wordLabel.getText()));
         infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
-        
+
         wordLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
 
         TextField userInput = new TextField();
@@ -290,13 +304,7 @@ public class ItEnglishUi extends Application {
         layout.setBackground(new Background(new BackgroundFill(Color.DARKGREY, null, null)));
 
         answerButton.setOnAction(e -> {
-            String feedback = "";
-            boolean correct = itEnglishService.checkUserInput(userInput.getText(), wordLabel.getText(), difficulty);
-            if (correct) {
-                feedback = "Vastauksesi " + userInput.getText() + " oli oikein!";
-            } else {
-                feedback = "Vastauksesi " + userInput.getText() + " oli väärin!";
-            }
+            String feedback = itEnglishService.checkUserInput(userInput.getText(), wordLabel.getText(), difficulty);
             study(primaryStage, difficulty, feedback);
 
         });
@@ -317,6 +325,7 @@ public class ItEnglishUi extends Application {
     }
 
     public void feedback(Stage primaryStage) {
+        //näytä palaute tehdystä harjoituksesta
 
     }
 
