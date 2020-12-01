@@ -13,4 +13,6 @@
 | 24.11 | 4    | käyttöliittymän laajentaminen suunnitelluille ominaisuuksille & Checkstylen käyttöönotto |
 | 24.11 | 2    | testejä & luokka/pakkauskaavio |
 | 26.11 | 2    | sanaston uudistusta mm. toisella kysymystyypillä |
-| yht   | 27  |  | 
+| 30.11 | 5    | perehtymistä dao-malliin ja sen osittainen implementointi |
+| 1.12  | 5    | dao-mallin implementointia, koodin siistimistä/korjailua ja pieniä lisäominaisuuksia sovellukseen |
+| yht   | 37   |  | 
