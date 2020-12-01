@@ -14,3 +14,8 @@ mvn compile exec:java -Dexec.mainClass=itenglish.Main
 mvn test  
 mvn jacoco:report  
 mvn jxr:jxr checkstyle:checkstyle  
+mvn package
+
+## Releaset
+[Viikko 5](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko5)  
+*Huom. Graafisessa käyttöliittymässä on valittavissa joitakin toimintoja, joiden takana ei vielä ole toiminnallisuutta.*
