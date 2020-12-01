@@ -16,16 +16,14 @@ import java.util.Random;
  */
 public class ItEnglishService {
 
-
     private VocabularyDao vocabularyDao;
     Random random;
 
     public ItEnglishService(VocabularyDao vocabularyDao) {
-      this.random = new Random();
-      this.vocabularyDao = vocabularyDao;
+        this.random = new Random();
+        this.vocabularyDao = vocabularyDao;
 
     }
-
 
     public String randomWord(String difficulty) {
         List<String> keys = new ArrayList<>();
@@ -42,7 +40,7 @@ public class ItEnglishService {
     }
 
     public String checkUserInput(String input, String word, String difficulty) {
- 
+
         if (difficulty.equals("Aloittelija")) {
             if (!(vocabularyDao.getByDifficulty("beginner").getVocabulary().get(word).equalsIgnoreCase(input.trim()))) {
                 return "Vastauksesi \"" + input + "\" oli väärin!\nOikea vastaus oli " + vocabularyDao.getByDifficulty("beginner").getVocabulary().get(word) + ".";
