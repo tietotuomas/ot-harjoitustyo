@@ -1,27 +1,27 @@
-file, tiedosto
-keyboard, näppäimistö
-password, salasana
-printer, tulostin
-key, avain
-code, koodi
-engineer, insinööri
+tiedosto, file
+näppäimistö, keyboard
+salasana, password
+tulostin, printer
+avain, key
+koodi, code
+insinööri, engineer
 rivi, row
-firewall, palomuuri
-digital, digitaalinen
-copy, kopioida
-graphics, grafiikka
-simulation, simulaatio
-column, sarake
-value, arvo
-desktop, työpöytä
-hacker, hakkeri
-function, funktio
-console, konsoli
-cookie, eväste
-sound card, äänikortti
-motherboard, emolevy
-server, palvelin
-double click, kaksoisklikkaus
-wireless, langaton
-touch screen, kosketusnäyttö
+palomuuri, firewall
+digitaalinen, digital
+kopioida, copy
+grafiikka, graphics
+simulaatio, simulation
+sarake, column
+arvo, value
+työpöytä, desktop
+hakkeri, hacker
+funktio, function
+konsoli, console
+eväste, cookie
+äänikortti, sound card
+emolevy, motherboard
+palvelin, server
+kaksoisklikkaus, double click
+langaton, wireless
+kosketusnäyttö, touch screen
 bitti, bit
