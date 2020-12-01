@@ -193,7 +193,7 @@ public class ItEnglishUi extends Application {
                 + "\nEsim. tietokone -> computer."
                 + "\nKeskiverto- ja Mestari-vaikeustasot sisältävät myös englanninkielisten "
                 + "\nlyhenteiden auki kirjoittamista englanniksi."
-                + "\nEsim. PC -> personal computer.");
+                + "\nEsim. IT -> information technology.");
 //                + "\nVoit vastata ilman artikkeleita (ohjelma ei tarkista niiden oikeellisuutta). "
 //                + "\nMyöskään kirjainkoolla ei ole väliä.");
         instructionsLabel.setFont(Font.font("Times New Roman", FontWeight.LIGHT, 12));

@@ -64,7 +64,6 @@ public class ItEnglishService {
     public String randomWord(String difficulty) {
         if (difficulty.equals("Aloittelija")) {
             List<String> keys = new ArrayList<String>(vocabularyDao.getByDifficulty("beginner").getVocabulary().keySet());
-            System.out.println(keys);
             return vocabularyDao.getByDifficulty("beginner").getVocabulary().get(keys.get(random.nextInt(keys.size())));
 
         }
@@ -80,22 +79,19 @@ public class ItEnglishService {
         return "randomWordError";
     }
 
-    public String infoText(String word) {
-        if (Character.isUpperCase(word.charAt(0))) {
-            return "Kirjoita auki lyhenne:";
-        } else {
-            return "Käännä sana:";
-        }
-    }
-
     public boolean checkUserInput(String input, String word, String difficulty) {
+        System.out.println(word);
         if (difficulty.equals("Aloittelija")) {
             if (vocabularyDao.getByDifficulty("beginner").getVocabulary().get(input) != null && vocabularyDao.getByDifficulty("beginner").getVocabulary().get(input).equals(word)) {
                 return true;
             }
 
         }
+
         if (difficulty.equals("Keskiverto")) {
+            if (checkIfAcronym(word)) {
+                
+            }
             if (this.average.get(input) != null && this.average.get(input).equals(word)) {
                 return true;
             }
@@ -108,6 +104,19 @@ public class ItEnglishService {
 
         }
         return false;
+    }
+
+    public String infoText(String word) {
+        if (checkIfAcronym(word)) {
+            return "Kirjoita auki lyhenne:";
+        } else {
+            return "Käännä englanniksi:";
+        }
+
+    }
+
+    public boolean checkIfAcronym(String word) {
+        return Character.isUpperCase(word.charAt(0));
     }
 
 }
