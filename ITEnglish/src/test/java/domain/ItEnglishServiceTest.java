@@ -5,7 +5,9 @@
  */
 package domain;
 
+import itenglish.dao.FileUserDao;
 import itenglish.dao.FileVocabularyDao;
+import itenglish.dao.UserDao;
 import itenglish.dao.VocabularyDao;
 import itenglish.domain.ItEnglishService;
 import itenglish.domain.Vocabulary;
@@ -28,6 +30,7 @@ public class ItEnglishServiceTest {
 
     private VocabularyDao vocabularyDao;
     private ItEnglishService service;
+    private UserDao userDao;
 
     public ItEnglishServiceTest() throws Exception {
         Properties properties = new Properties();
@@ -39,8 +42,9 @@ public class ItEnglishServiceTest {
         files.put("average", properties.getProperty("average"));
         files.put("master", properties.getProperty("master"));
         FileVocabularyDao fileVocabularyDao = new FileVocabularyDao(files);
+        FileUserDao userdao = new FileUserDao(properties.getProperty("users"));
         this.vocabularyDao = fileVocabularyDao;
-        this.service = new ItEnglishService(vocabularyDao);
+        this.service = new ItEnglishService(vocabularyDao, userDao);
     }
 
     @Before
@@ -99,4 +103,35 @@ public class ItEnglishServiceTest {
         assertEquals("Käännä englanniksi:", this.service.infoText("kameli"));
 
     }
+
+    @Test
+    public void isPassWordEligibleReturnsOkIfCorrectLength() {
+        assertEquals("OK", this.service.isPasswordEligible("password"));
+    }
+
+    @Test
+    public void isPassWordEligibleReturnsCorrectStringIfPasswordTooShort() {
+        assertEquals("Syöttämäsi salasana oli liian lyhyt." + "\n", this.service.isPasswordEligible("p"));
+    }
+
+    @Test
+    public void isPassWordEligibleReturnsCorrectStringIfPasswordTooLong() {
+        assertEquals("Syöttämäsi salasana oli liian pitkä." + "\n", this.service.isPasswordEligible("passwordpassword"));
+    }
+
+    @Test
+    public void isNameEligibleReturnsOkIfCorrectLength() {
+        assertEquals("OK", this.service.isNameEligible("name"));
+    }
+
+    @Test
+    public void isNameEligibleReturnsCorrectStringIfNameTooShort() {
+        assertEquals("Syöttämäsi käyttäjätunnus oli liian lyhyt." + "\n", this.service.isNameEligible("n"));
+    }
+    
+        @Test
+    public void isNameEligibleReturnsCorrectStringIfNameTooLong() {
+        assertEquals("Syöttämäsi käyttäjätunnus oli liian pitkä." + "\n", this.service.isNameEligible("namenamename"));
+    }
+
 }
