@@ -10,17 +10,18 @@ Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä"). Myöhemmin m
 
 ## Käyttöliittymä
 
-Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä**)
+Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä taas**)
 
 ## Perusversion toiminnallisuus
 
-### Ennen kirjautumista
+### Ennen kirjautumista (**tehty**)
 
-- käyttäjä voi rekisteröityä sovellukseen luomalla käyttäjätunnuksen
-  - käyttäjätunnuksen täytyy olla uniikki ja sopivan pituinen
+- käyttäjä voi rekisteröityä sovellukseen luomalla käyttäjätunnuksen ja siihen liittyvän salasanan (**tehty**)
+  - käyttäjätunnuksen täytyy olla uniikki (**tehty**)
+  - käyttäjätunnuksen ja salasanan täytyy olla sopivan pituinen (**tehty**)
 
-- käyttäjä voi kirjautua sovellukseen syöttämllä olemassa olevan käyttäjätunnuksen
-  - jos käyttäjää ei olemassa, ilmoittaa sovellus tästä ja pyytää tunnuksen
+- käyttäjä voi kirjautua sovellukseen syöttämllä olemassa olevan käyttäjätunnuksen (**tehty**)
+  - jos käyttäjätunnusta ei löydy tai käyttäjätunnus ei täsmää salasanaan, ilmoittaa sovellus tästä (**tehty**)
 
 ### Kirjautumisen jälkeen
 
@@ -36,17 +37,17 @@ Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä**)
   - kysymykset arvotaan satunnaisesti
   - kukin kysymys esiintyy kysymyssarjassa korkeintaan kerran
   - jokaisen sanan jälkeen ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin 
-  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus (**tehty**)
+  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus
   - sovellus antaa palautteen kysymyssarjaan vastaamisen jälkeen sekä sanallisesti että pisteiden muodossa
 
-- käyttäjä voi kirjautua ulos järjestelmästä
+- käyttäjä voi palata kyselystä takaisin valintoihin ennen kuin valittu määrä käännettävä sanoja on näytetty (**tehty**)
+- käyttäjä voi kirjautua ulos järjestelmästä (**tehty**)
 
 ## Jatkokehitysideoita
 
-- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen (**tehty osittain**)
-- käyttäjätunnuksen lisäksi salasana
-- käyttäjälle mahdollisuus valita kysymyssarjan koko (esim. 5-20 sanan välillä)
+- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen
+- salasana käsitellään tarkoituksenmukaisesti suojattuna/salattuna
 - tietokantojen hyödyntäminen tallennuksessa
 - pääkäyttäjä-luokan luominen
 - pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja lisätä sanastoa
-- sanaston harjoittelun rinnalle toinen kysymysmuoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä (**tehty**) 
+- sanaston harjoittelun rinnalle toinen kysymysmuoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä
