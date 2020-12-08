@@ -11,11 +11,47 @@ Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttä
 
 ## Komentorivitoiminnot
 
-mvn compile exec:java -Dexec.mainClass=itenglish.Main  
-mvn test  
-mvn jacoco:report  
-mvn jxr:jxr checkstyle:checkstyle  
+Sovellus voidaan käynnistää komentorivillä komennolla
+
+```
+mvn compile exec:java -Dexec.mainClass=itenglish.Main
+```
+
+Testit voidaan suorittaa komennolla
+
+```
+mvn test
+```
+
+Testikattavuusraportti voidaan luoda komennolla
+
+```
+mvn jacoco:report
+```
+
+Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto *target/site/jacoco/index.html*
+
+### Suoritettavan jarin generointi
+
+Komento
+
+```
 mvn package
+```
+
+luo hakemistoon *target* suoritettavan jar-tiedoston *ItEnglish-1.0-SNAPSHOT.jar*
+
+
+### Checkstyle
+
+Checkstylen määrittelemät tarkistukset suoritetaan komennolla
+
+```
+ mvn jxr:jxr checkstyle:checkstyle
+```
+
+Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto *target/site/checkstyle.html*
+
 
 ## Releaset
 [Viikko 6](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko6)
