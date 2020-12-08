@@ -17,8 +17,4 @@ mvn jxr:jxr checkstyle:checkstyle
 mvn package
 
 ## Releaset
-[Viikko 5](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko5)  
-
-- *Graafisessa käyttöliittymässä on joitakin komponentteja, joiden takana ei vielä ole oikeaa toiminnallisuutta.*
-- *Itselleni tuntemattomasta syystä JavaFX ei ilmeisesti käyttäydy (näyttäydy) luomani jar-paketin kautta kaikilla kokoonpanoilla niin kuin olisi toivottavaa.*  
-*EDIT: Syy ilmeisesti selvisi, päivitin kurssimateriaalin mukaisesti pom.xml:n javafx-controls 15.0.1. Tämä ei ehtinyt releaseen, mutta omalla kokoonpanolla JavaFx toiminut oikein ilman tuota koko ajan.*
+[Viikko 6](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko6)
