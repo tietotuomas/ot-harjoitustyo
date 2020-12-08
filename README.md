@@ -31,7 +31,7 @@ mvn jacoco:report
 
 Kattavuusraporttia voi tarkastella avaamalla selaimella tiedosto *target/site/jacoco/index.html*
 
-### Suoritettavan jarin generointi
+### Suoritettavan jarin luonti
 
 Komento
 
@@ -50,7 +50,7 @@ Checkstylen määrittelemät tarkistukset suoritetaan komennolla
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto *target/site/checkstyle.html*
+Raporttia mahdollisista virheistä voi tarkastella avaamalla selaimella tiedosto *target/site/checkstyle.html*
 
 
 ## Releaset
