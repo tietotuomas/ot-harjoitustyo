@@ -5,9 +5,9 @@ Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttä
 ## Dokumentaatio
 
 [Vaatimusmäärittely](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)  
-[Tuntikirjanpito](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
-[Käyttöohje](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
-[Arkkitehtuurikuvaus](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Tuntikirjanpito](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)  
+[Käyttöohje](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)  
+[Arkkitehtuurikuvaus](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)  
 
 ## Komentorivitoiminnot
 
