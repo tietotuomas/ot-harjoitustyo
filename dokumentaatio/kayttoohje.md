@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [itenglish.jar]()
+Lataa tiedosto [itenglish.jar](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko6)
 
 ## Konfigurointi
 
