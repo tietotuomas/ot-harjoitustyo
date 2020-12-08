@@ -45,7 +45,7 @@ public class FileVocabularyDao implements VocabularyDao {
                     vocabulary.getVocabulary().put(question, answer);
                 }
             } catch (Exception e) {
-                System.out.println("Virhe: " + e.getMessage());
+                System.out.println("Tiedoston lukeminen ei onnistunut: " + e.getMessage());
             }
             this.vocabularies.add(vocabulary);
         }
