@@ -1,5 +1,1 @@
 Testaaja,Testaaja,0,0,0
-hahaha,hahaha,0,0,0
-Bullo,bullo,0,0,0
-kati,kati,0,0,0
-Thymeleaf,spring,0,0,0
