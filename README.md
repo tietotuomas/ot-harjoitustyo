@@ -1,6 +1,6 @@
 # IT ENGLISH
 
-Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttäjä valitsee sopivan vaikeustason ja sovellus arpoo käyttäjän valinnan mukaisesti joukon sanoja, jotka käyttäjä kääntää suomesta englanniksi. Sovellus muistaa pysyväistallennuksen avulla käyttäjän aikaisemmat ennätystulokset, joiden perusteella käyttäjä voi seurata kehitystään.
+Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttäjä valitsee sopivan vaikeustason ja sanamäärän, joiden perusteella sovellus luo aineistosta sattumanvaraisen kokoelman sanoja. Käyttäjä kääntää sanat suomesta englanniksi tai kirjoittaa englanninkielisen lyhenteen auki ohjeistuksen mukaan. Sovellus muistaa pysyväistallennuksen avulla käyttäjän aikaisemmat ennätystulokset, joiden perusteella käyttäjä voi seurata kehitystään.
 
 ## Dokumentaatio
 
