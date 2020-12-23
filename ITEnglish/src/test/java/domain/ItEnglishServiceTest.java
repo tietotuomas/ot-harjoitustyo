@@ -5,18 +5,10 @@
  */
 package domain;
 
-import itenglish.dao.FileUserDao;
-import itenglish.dao.FileVocabularyDao;
-import itenglish.dao.UserDao;
-import itenglish.dao.VocabularyDao;
+import dao.FakeUserDao;
+import dao.FakeVocabularyDao;
 import itenglish.domain.ItEnglishService;
-import itenglish.domain.Vocabulary;
-import java.io.FileInputStream;
-import java.util.HashMap;
-import java.util.Properties;
-
-import org.junit.After;
-import org.junit.AfterClass;
+import itenglish.domain.StatsService;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -28,28 +20,64 @@ import static org.junit.Assert.*;
  */
 public class ItEnglishServiceTest {
 
-    private VocabularyDao vocabularyDao;
+    private FakeUserDao userDao;
+    private FakeVocabularyDao vocabularyDao;
     private ItEnglishService service;
-    private UserDao userDao;
-
-    public ItEnglishServiceTest() throws Exception {
-        Properties properties = new Properties();
-
-        properties.load(new FileInputStream("config.properties"));
-
-        HashMap<String, String> files = new HashMap<>();
-        files.put("beginner", properties.getProperty("beginner"));
-        files.put("average", properties.getProperty("average"));
-        files.put("master", properties.getProperty("master"));
-        FileVocabularyDao fileVocabularyDao = new FileVocabularyDao(files);
-        FileUserDao userdao = new FileUserDao(properties.getProperty("users"));
-        this.vocabularyDao = fileVocabularyDao;
-        this.service = new ItEnglishService(vocabularyDao, userDao);
-    }
+    private StatsService statsService;
 
     @Before
     public void setUp() {
+        userDao = new FakeUserDao();
+        vocabularyDao = new FakeVocabularyDao();
+        statsService = new StatsService(userDao);
+        service = new ItEnglishService(vocabularyDao, statsService);
+    }
 
+    @Test
+    public void questionAnsweredSubtractsOne() {
+        service.setHowManyQuestions(10);
+        service.questionAnswered();
+        assertEquals(9, service.getHowManyQuestions());
+    }
+
+    @Test
+    public void currentSetReturnsTheCorrectWordOnBeginnerDifficulty() {
+        service.createNewSet("Aloittelija");
+        assertEquals("tiedosto", service.randomWord());
+    }
+
+    @Test
+    public void currentSetReturnsTheCorrectWordOnAverageDifficulty() {
+        service.createNewSet("Keskiverto");
+        assertEquals("reititin", service.randomWord());
+    }
+
+    @Test
+    public void currentSetReturnsTheCorrectWordOnMasterDifficulty() {
+        service.createNewSet("Mestari");
+        assertEquals("keko", service.randomWord());
+    }
+
+    @Test
+    public void setHowManyQuestionsByUserWorksCorrectlyWithFiveRandom() {
+        service.setHowManyQuestionsByUser("5 satunnaista");
+        assertEquals(5, service.getHowManyQuestions());
+        assertEquals(5, statsService.getTotalQuestions());
+    }
+
+    @Test
+    public void setHowManyQuestionsByUserWorksCorrectlyWithTenRandom() {
+        service.setHowManyQuestionsByUser("10 satunnaista");
+        assertEquals(10, service.getHowManyQuestions());
+        assertEquals(10, statsService.getTotalQuestions());
+    }
+
+    @Test
+    public void setHowManyQuestionsByUserWorksCorrectlyWithWholeSet() {
+        service.createNewSet("Aloittelija");
+        service.setHowManyQuestionsByUser("Kaikki");
+        assertEquals(1, service.getHowManyQuestions());
+        assertEquals(1, statsService.getTotalQuestions());
     }
 
     @Test
@@ -59,7 +87,7 @@ public class ItEnglishServiceTest {
 
     @Test
     public void checkUserInputReturnsCorrectStringIfDifficultyAverage() {
-        assertEquals("Vastauksesi \"" + "input" + "\" oli oikein!", this.service.checkUserInput("input", "syöte", "Keskiverto"));
+        assertEquals("Vastauksesi \"" + "router" + "\" oli oikein!", this.service.checkUserInput("router", "reititin", "Keskiverto"));
     }
 
     @Test
@@ -74,7 +102,7 @@ public class ItEnglishServiceTest {
 
     @Test
     public void checkUserInputReturnsCorrectStringIfDifficultyAverageAndWrongAnswer() {
-        assertEquals("Vastauksesi \"" + "wrong" + "\" oli väärin!\nOikea vastaus oli input.", this.service.checkUserInput("wrong", "syöte", "Keskiverto"));
+        assertEquals("Vastauksesi \"" + "wrong" + "\" oli väärin!\nOikea vastaus oli router.", this.service.checkUserInput("wrong", "reititin", "Keskiverto"));
     }
 
     @Test
@@ -103,35 +131,10 @@ public class ItEnglishServiceTest {
         assertEquals("Käännä englanniksi:", this.service.infoText("kameli"));
 
     }
-
-    @Test
-    public void isPassWordEligibleReturnsOkIfCorrectLength() {
-        assertEquals("OK", this.service.isPasswordEligible("password"));
-    }
-
-    @Test
-    public void isPassWordEligibleReturnsCorrectStringIfPasswordTooShort() {
-        assertEquals("Syöttämäsi salasana oli liian lyhyt." + "\n", this.service.isPasswordEligible("p"));
-    }
-
-    @Test
-    public void isPassWordEligibleReturnsCorrectStringIfPasswordTooLong() {
-        assertEquals("Syöttämäsi salasana oli liian pitkä." + "\n", this.service.isPasswordEligible("passwordpassword"));
-    }
-
-    @Test
-    public void isNameEligibleReturnsOkIfCorrectLength() {
-        assertEquals("OK", this.service.isNameEligible("name"));
-    }
-
-    @Test
-    public void isNameEligibleReturnsCorrectStringIfNameTooShort() {
-        assertEquals("Syöttämäsi käyttäjätunnus oli liian lyhyt." + "\n", this.service.isNameEligible("n"));
-    }
     
-        @Test
-    public void isNameEligibleReturnsCorrectStringIfNameTooLong() {
-        assertEquals("Syöttämäsi käyttäjätunnus oli liian pitkä." + "\n", this.service.isNameEligible("namenamename"));
+    @Test
+    public void totalWordsReturnsCorrectInt() {
+        assertEquals(1, service.totalWords("master"));
     }
 
 }

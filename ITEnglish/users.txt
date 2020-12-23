@@ -1,4 +1,2 @@
-Testaaja,Testaaja,0,0,0
-Villisika,villisika,0,0,0
-Kameli,$2a$10$x3fk2Cm8smQ2AI3x0voHDesu0fjIthNle70zeDaW/mmSt8UC5TMC2,1,5,0
-kameli,$2a$10$jMTwp87u4CzcZm2g3eMiQO9RzJWxb/mVBc5h8odT3MLJPDwZ4jZdu,27,20,25
+Kameli,$2a$10$W8Kc7Zws4QL6etHrhgLLnulZ4vG6q2EpBKB0Rgkl0aLrjlL3NVDRW,3,3,0
+Elon Musk,$2a$10$N5Q40Ofs6dCNMGxRpUbIhOIWOLUKcY5OM1ShTE4rNzVXndBGrJZbm,0,0,0
