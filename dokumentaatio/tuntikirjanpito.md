@@ -20,5 +20,5 @@
 | 8.12  | 3    | dokumentaatiota, testejä |
 | 20.12  | 2    | salasanan suojaus |
 | 21.12  | 4    | UserServicen ja Statservicen kehittelyä |
-| 22.12  | 4    | UserServicen ja Statservicen kehittelyä |
-| yht   | 60   |  | 
+| 22.12  | 5    | UserServicen ja Statservicen kehittelyä |
+| yht   | 61   |  | 
