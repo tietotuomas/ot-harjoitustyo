@@ -8,7 +8,7 @@ tavu, byte
 askelpalautin, backspace
 ajuri, driver
 rajapinta, interface
-tuloste, ouput
+tuloste, output
 skaalaaminen, scaling
 alihakemisto, subdirectory
 varmenne, certificate

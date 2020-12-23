@@ -1,1 +1,4 @@
 Testaaja,Testaaja,0,0,0
+Villisika,villisika,0,0,0
+Kameli,$2a$10$x3fk2Cm8smQ2AI3x0voHDesu0fjIthNle70zeDaW/mmSt8UC5TMC2,1,5,0
+kameli,$2a$10$jMTwp87u4CzcZm2g3eMiQO9RzJWxb/mVBc5h8odT3MLJPDwZ4jZdu,27,20,25

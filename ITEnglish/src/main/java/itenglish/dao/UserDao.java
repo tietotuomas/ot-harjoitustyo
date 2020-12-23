@@ -13,6 +13,8 @@ import java.util.List;
 import itenglish.domain.User;
 
 public interface UserDao {
+    
+    void save() throws Exception;
 
     User create(User user) throws Exception;
 

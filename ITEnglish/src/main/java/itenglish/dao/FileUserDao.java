@@ -45,14 +45,18 @@ public class FileUserDao implements UserDao {
 
         }
     }
-
-    private void save() throws Exception {
+    
+    @Override
+    public void save() throws Exception {
         try (FileWriter writer = new FileWriter(file)) {
             for (User user : users) {
                 writer.write(user.getName() + "," + user.getPassword() + ","
                         + user.getBeginner() + "," + user.getAverage() + "," + user.getMaster() + "\n");
             }
-        }
+        } catch (Exception e) {
+            System.out.println("Tiedostoon tallentaminen ei onnistunut: " + e.getMessage());
+
+        } 
     }
 
     @Override
