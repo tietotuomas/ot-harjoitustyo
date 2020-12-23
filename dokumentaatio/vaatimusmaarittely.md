@@ -2,26 +2,27 @@
 
 ## Sovelluksen tarkoitus
 
-Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttäjä valitsee sopivan vaikeustason ja sovellus arpoo käyttäjän valinnan mukaisesti joukon sanoja, jotka käyttäjä kääntää (kirjoittaen tai mahdollisesti oikean vaihtoehdoista valiten) suomesta englanniksi tai päinvastoin. Sovellus muistaa pysyväistallennuksen avulla käyttäjän aikaisemmat ennätystulokset, joiden perusteella käyttäjä voi seurata kehitystään.
+Sovelluksen käyttötarkoitus on englannin kielen IT-sanaston opiskelu. Käyttäjä valitsee sopivan vaikeustason ja sanamäärän, joiden perusteella sovellus luo aineistosta sattumanvaraisen kokoelman sanoja. Käyttäjä kääntää sanat suomesta englanniksi tai kirjoittaa englanninkielisen lyhenteen auki ohjeistuksen mukaan. Sovellus muistaa pysyväistallennuksen avulla käyttäjän aikaisemmat ennätystulokset, joiden perusteella käyttäjä voi seurata kehitystään.
 
 ## Käyttäjät
 
-Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä"). Myöhemmin mahdollisesti myös pääkäyttäjä.
+Sovelluksessa on aluksi vain yksi käyttäjärooli ("käyttäjä").
 
 ## Käyttöliittymä
 
-Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä taas**)
+Sovelluksessa on graafinen käyttöliittymä.
 
 ## Perusversion toiminnallisuus
 
-### Ennen kirjautumista (**tehty**)
+### Ennen kirjautumista
 
-- käyttäjä voi rekisteröityä sovellukseen luomalla käyttäjätunnuksen ja siihen liittyvän salasanan (**tehty**)
-  - käyttäjätunnuksen täytyy olla uniikki (**tehty**)
-  - käyttäjätunnuksen ja salasanan täytyy olla sopivan pituinen (**tehty**)
+- käyttäjä voi rekisteröityä sovellukseen luomalla käyttäjätunnuksen ja siihen liittyvän salasanan
+  - käyttäjätunnuksen täytyy olla uniikki
+  - käyttäjätunnuksen ja salasanan täytyy olla sopivan pituinen
+  - salasana tallennetaan sovelluksen tietoihin suojattuna
 
-- käyttäjä voi kirjautua sovellukseen syöttämllä olemassa olevan käyttäjätunnuksen (**tehty**)
-  - jos käyttäjätunnusta ei löydy tai käyttäjätunnus ei täsmää salasanaan, ilmoittaa sovellus tästä (**tehty**)
+- käyttäjä voi kirjautua sovellukseen syöttämllä olemassa olevan käyttäjätunnuksen
+  - jos käyttäjätunnusta ei löydy tai käyttäjätunnus ei täsmää salasanaan, ilmoittaa sovellus tästä
 
 ### Kirjautumisen jälkeen
 
@@ -30,24 +31,24 @@ Sovelluksessa on graafinen käyttöliittymä. (**tehty pieniä lisäyksiä taas*
   - keskiverto
   - mestari
  
-- käyttäjä voi nähdä aikaisemmat pisteensä (oikeat vastaukset/kysymykset)
+- käyttäjä voi tarkastaa tilastoista ennätyspisteensä (eniten oikeita vastauksia/vaikeustaso)
 
 - käyttäjä voi vastata kysymyssarjaan, jossa on vakio määrä (5, 10 tai kaikki) käännettäviä sanoja
   - kysymyksiin vastataan sana kerrallaan
   - kysymykset arvotaan satunnaisesti
   - kukin kysymys esiintyy kysymyssarjassa korkeintaan kerran
-  - jokaisen sanan jälkeen ilmoitetaan käyttäjälle, oliko hänen vastauksena oikein vai väärin 
-  - jos käyttäjän vastaus oli väärin, näytetään vastaajalle oikea vastaus
+  - kirjainkoko ei vaikuta vastauksen oikeellistuuteen
+  - vastauksen voi lukita myös painamalla enteriä (klikkauksen lisäksi)
+  - jokaisen sanan jälkeen ilmoitetaan käyttäjälle, oliko hänen vastauksensa oikein vai väärin
+  - jokaisen sanan jälkeen käyttäjälle näytetään oikea vastaus
   - sovellus antaa palautteen kysymyssarjaan vastaamisen jälkeen sekä sanallisesti että pisteiden muodossa
 
-- käyttäjä voi palata kyselystä takaisin valintoihin ennen kuin valittu määrä käännettävä sanoja on näytetty (**tehty**)
-- käyttäjä voi kirjautua ulos järjestelmästä (**tehty**)
+- käyttäjä voi palata kyselystä takaisin valintoihin ennen kuin valittu määrä käännettävä sanoja on näytetty
+- käyttäjä voi kirjautua ulos järjestelmästä
 
 ## Jatkokehitysideoita
 
-- vastauksien tulkinta niin, että esim. artikkelit tai kirjainten koko ei vaikuta vastauksen oikeellisuuteen
-- salasana käsitellään tarkoituksenmukaisesti suojattuna/salattuna
 - tietokantojen hyödyntäminen tallennuksessa
+- monipuolisempaa tilastointia
 - pääkäyttäjä-luokan luominen
 - pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja lisätä sanastoa
-- sanaston harjoittelun rinnalle toinen kysymysmuoto, jossa käyttäjä voi opiskella englanninkielisiä IT-lyhenteitä
