@@ -1,28 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package itenglish.domain;
 
 import itenglish.dao.UserDao;
 import java.util.Random;
 
-/**
- *
- * @author aaltonet
- */
+
 public class StatsService {
 
     private UserDao userDao;
     private String loggedUser;
-    private UserService userlService;
     private int correctAnswers;
     private int totalQuestions;
 
     public StatsService(UserDao userDao) {
         this.userDao = userDao;
         this.loggedUser = loggedUser;
+    }
+
+    public int getTotalQuestions() {
+        return totalQuestions;
+    }
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
     }
 
     public int getBeginnerRecord() {
@@ -64,12 +64,13 @@ public class StatsService {
     while (messageSelector < feedbackLimit.length && score > feedbackLimit[messageSelector]) {
         messageSelector++;
     }
+
     Random random = new Random();
     int randomIndex = random.nextInt(feedbackArray[messageSelector].length);
     if (checkIfRecord(difficulty)) {
-        return "Sait yhteensä " + this.correctAnswers + "/" + this.totalQuestions + " oikein (ennätyspisteesi!)!\n" + feedbackArray[messageSelector][randomIndex];
+        return "Sait yhteensä " + getCorrectAnswers() + "/" + getTotalQuestions() + " oikein (uudet ennätyspisteesi)!\n" + feedbackArray[messageSelector][randomIndex];
     }
-    return "Sait yhteensä " + this.correctAnswers + "/" + this.totalQuestions + " oikein!\n" + feedbackArray[messageSelector][randomIndex];
+    return "Sait yhteensä " + getCorrectAnswers() + "/" + getTotalQuestions()+ " oikein!\n" + feedbackArray[messageSelector][randomIndex];
 
     }
 
@@ -94,7 +95,7 @@ public class StatsService {
     
     
     public double countScore() {
-        return this.correctAnswers/this.totalQuestions;
+        return (double)getCorrectAnswers()/getTotalQuestions();
     }
 
 }

@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package itenglish.domain;
 
 import itenglish.dao.FileUserDao;
@@ -12,31 +8,31 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- *
- * @author aaltonet
- */
+
 public class ItEnglishService {
 
     private VocabularyDao vocabularyDao;
-    private Integer howManyQuestions;
+    private int howManyQuestions;
     private ArrayList<String> currentSet;
-    private StatsService statService;
-
-    Random random;
+    private StatsService statsService;
+    private Random random;
 
     public ItEnglishService(VocabularyDao vocabularyDao, StatsService statsService) {
         this.random = new Random();
         this.vocabularyDao = vocabularyDao;
-        this.statService = statsService;
+        this.statsService = statsService;
 
     }
 
-    public void setHowManyQuestions(Integer howManyQuestions) {
+    public void setCurrentSet(ArrayList<String> currentSet) {
+        this.currentSet = currentSet;
+    }
+
+    public void setHowManyQuestions(int howManyQuestions) {
         this.howManyQuestions = howManyQuestions;
     }
 
-    public Integer getHowManyQuestions() {
+    public int getHowManyQuestions() {
         return howManyQuestions;
     }
     
@@ -45,15 +41,15 @@ public class ItEnglishService {
     }
 
     public void createNewSet(String difficulty) {
-        this.currentSet = new ArrayList<>();
+        
         if (difficulty.equals("Aloittelija")) {
-            currentSet = new ArrayList<>(vocabularyDao.getByDifficulty("beginner").getVocabulary().keySet());
+            setCurrentSet(new ArrayList<>(vocabularyDao.getByDifficulty("beginner").getVocabulary().keySet()));
         }
         if (difficulty.equals("Keskiverto")) {
-            currentSet = new ArrayList<>(vocabularyDao.getByDifficulty("average").getVocabulary().keySet());
+            setCurrentSet(new ArrayList<>(vocabularyDao.getByDifficulty("average").getVocabulary().keySet()));
         }
         if (difficulty.equals("Mestari")) {
-            currentSet = new ArrayList<>(vocabularyDao.getByDifficulty("master").getVocabulary().keySet());
+            setCurrentSet(new ArrayList<>(vocabularyDao.getByDifficulty("master").getVocabulary().keySet()));
         }
 
     }
@@ -66,12 +62,11 @@ public class ItEnglishService {
         } else {
             setHowManyQuestions(currentSet.size());
         }
-        statService.setTotalQuestions(howManyQuestions);
+        statsService.setTotalQuestions(howManyQuestions);
     }
     
 
-    public String randomWord(String difficulty) {
-
+    public String randomWord() {
         String randomWord = currentSet.get(random.nextInt(currentSet.size()));
         currentSet.remove(randomWord);
         return randomWord;
@@ -97,7 +92,7 @@ public class ItEnglishService {
             }
 
         }
-        statService.addCorrectAnswer();
+        statsService.addCorrectAnswer();
         return "Vastauksesi \"" + input + "\" oli oikein!";
     }
 

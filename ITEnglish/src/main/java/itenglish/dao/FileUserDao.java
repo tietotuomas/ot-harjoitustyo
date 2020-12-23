@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package itenglish.dao;
 
 import itenglish.domain.User;
@@ -12,10 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- *
- * @author aaltonet
- */
+
 public class FileUserDao implements UserDao {
 
     private List<User> users;
@@ -28,7 +21,7 @@ public class FileUserDao implements UserDao {
 
     }
 
-    private void loadUsers(String file) {
+    private void loadUsers(String file) throws Exception{
         try {
             Scanner fileReader = new Scanner(new File(file));
 
@@ -41,7 +34,8 @@ public class FileUserDao implements UserDao {
                 users.add(user);
             }
         } catch (Exception e) {
-            System.out.println("Tiedoston lukeminen ei onnistunut: " + e.getMessage());
+            FileWriter writer = new FileWriter(new File(file));
+            writer.close();
 
         }
     }
@@ -59,17 +53,16 @@ public class FileUserDao implements UserDao {
         } 
     }
 
-    @Override
-    public List<User> getAll() {
-        System.out.println(users);
-        return users;
-    }
+//    @Override
+//    public List<User> getAll() {
+//        System.out.println(users);
+//        return users;
+//    }
 
     @Override
-    public User create(User user) throws Exception {
-        users.add(user);
+    public void create(String username, String password) throws Exception {
+        users.add(new User(username, password));
         save();
-        return user;
     }
 
 

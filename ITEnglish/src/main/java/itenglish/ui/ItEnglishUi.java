@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package itenglish.ui;
 
 import itenglish.dao.FileUserDao;
@@ -39,10 +35,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-/**
- *
- * @author aaltonet
- */
+
 public class ItEnglishUi extends Application {
 
     private ItEnglishService itEnglishService;
@@ -303,7 +296,7 @@ public class ItEnglishUi extends Application {
     }
 
     public void study(Stage primaryStage, String difficulty, String message) {
-        Label wordLabel = new Label(itEnglishService.randomWord(difficulty));
+        Label wordLabel = new Label(itEnglishService.randomWord());
         Label infoLabel = new Label(message + "\n" + itEnglishService.infoText(wordLabel.getText()));
         infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
 
@@ -408,7 +401,7 @@ public class ItEnglishUi extends Application {
         rootPane.getChildren().addAll(infoLabel, layout, bottomRightLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
-        Scene studyScene = new Scene(rootPane, 500, 250);
+        Scene studyScene = new Scene(rootPane, 550, 250);
 
         primaryStage.setTitle("Palaute");
         primaryStage.setScene(studyScene);

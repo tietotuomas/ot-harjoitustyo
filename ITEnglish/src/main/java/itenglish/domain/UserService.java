@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package itenglish.domain;
 
 import itenglish.dao.UserDao;
 import org.mindrot.jbcrypt.BCrypt;
 
-/**
- *
- * @author aaltonet
- */
+
 public class UserService {
 
     private UserDao userDao;
@@ -38,7 +31,7 @@ public class UserService {
         }
 
         try {
-            userDao.create(new User(name, createHashedPassword(password)));
+            userDao.create(name, createHashedPassword(password));
         } catch (Exception e) {
             return "Käyttäjätunnuksen luonti epäonnistui kirjoitusvirheen vuoksi." + "\n";
         }
