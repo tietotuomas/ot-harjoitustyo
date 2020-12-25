@@ -27,6 +27,14 @@ public class FileVocabularyDao implements VocabularyDao {
         loadFiles(files);
     }
 
+    /**
+     * Metodi lukee sanoja sisältävät pysyväistallennus-tiedostot ja luo niistä
+     * vocabularies-listaan (luokan oliomuuttuja) tallennettavat
+     * Vocabulary-oliot.
+     *
+     * @see itenglish.domain.Vocabulary
+     * @param Sanastojen nimet ja tiedostojen nimet avain-arvo-parina.
+     */
     public void loadFiles(HashMap<String, String> files) {
 
         for (String difficulty : files.keySet()) {
@@ -45,13 +53,18 @@ public class FileVocabularyDao implements VocabularyDao {
                     vocabulary.getVocabulary().put(question, answer);
                 }
             } catch (Exception e) {
-                System.out.println("Tiedoston lukeminen ei onnistunut: " + e.getMessage());
             }
             this.vocabularies.add(vocabulary);
         }
 
     }
 
+    /**
+     * Metodi etsii ja palauttaa vaikeustason perusteella Vocabulary-olion.
+     *
+     * @param Vaikeustaso englanninkielisenä
+     * @return Palauttaa sanaston Vocabulary-oliona
+     */
     @Override
     public Vocabulary getByDifficulty(String difficulty) {
         for (Vocabulary vocabulary : this.vocabularies) {

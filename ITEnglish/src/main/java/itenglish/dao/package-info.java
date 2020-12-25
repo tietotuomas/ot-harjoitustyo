@@ -1,6 +1,4 @@
-
 /**
- * user records etc 
+ * DAO-rajapinnat ja niitä toteuttavat luokat
  */
-
 package itenglish.dao;

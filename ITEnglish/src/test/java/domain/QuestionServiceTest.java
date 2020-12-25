@@ -7,7 +7,7 @@ package domain;
 
 import dao.FakeUserDao;
 import dao.FakeVocabularyDao;
-import itenglish.domain.ItEnglishService;
+import itenglish.domain.QuestionService;
 import itenglish.domain.StatsService;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -18,11 +18,11 @@ import static org.junit.Assert.*;
  *
  * @author aaltonet
  */
-public class ItEnglishServiceTest {
+public class QuestionServiceTest {
 
     private FakeUserDao userDao;
     private FakeVocabularyDao vocabularyDao;
-    private ItEnglishService service;
+    private QuestionService service;
     private StatsService statsService;
 
     @Before
@@ -30,7 +30,7 @@ public class ItEnglishServiceTest {
         userDao = new FakeUserDao();
         vocabularyDao = new FakeVocabularyDao();
         statsService = new StatsService(userDao);
-        service = new ItEnglishService(vocabularyDao, statsService);
+        service = new QuestionService(vocabularyDao, statsService);
     }
 
     @Test

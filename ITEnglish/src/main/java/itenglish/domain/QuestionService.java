@@ -1,15 +1,15 @@
-
 package itenglish.domain;
 
-import itenglish.dao.FileUserDao;
-import itenglish.dao.UserDao;
 import itenglish.dao.VocabularyDao;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-
-public class ItEnglishService {
+/**
+ * Sovelluslogiikan luokka, jonka vastuualueena on erityisesti kysyttävien
+ * sanojen ja niihin liittyvien vastausten käsittely.
+ *
+ */
+public class QuestionService {
 
     private VocabularyDao vocabularyDao;
     private int howManyQuestions;
@@ -17,7 +17,7 @@ public class ItEnglishService {
     private StatsService statsService;
     private Random random;
 
-    public ItEnglishService(VocabularyDao vocabularyDao, StatsService statsService) {
+    public QuestionService(VocabularyDao vocabularyDao, StatsService statsService) {
         this.random = new Random();
         this.vocabularyDao = vocabularyDao;
         this.statsService = statsService;
@@ -35,13 +35,19 @@ public class ItEnglishService {
     public int getHowManyQuestions() {
         return howManyQuestions;
     }
-    
+
     public void questionAnswered() {
         this.howManyQuestions--;
     }
 
+    /**
+     * Metodi hakee vaikeustason mukaisen sanaston avaimet, jotka tallennetaan
+     * ArrayList-muotoiseen oliomuuttujaan.
+     *
+     * @param difficulty Käyttäjän valitsema vaikeustaso suomenkielisenä
+     */
     public void createNewSet(String difficulty) {
-        
+
         if (difficulty.equals("Aloittelija")) {
             setCurrentSet(new ArrayList<>(vocabularyDao.getByDifficulty("beginner").getVocabulary().keySet()));
         }
@@ -54,6 +60,12 @@ public class ItEnglishService {
 
     }
 
+    /**
+     * Metodi asettaa kysymysmäärän oliomuuttujaan käyttäjän valinnan
+     * mukaisesti.
+     *
+     * @param button Käyttäjän valitsema kysymysmäärä
+     */
     public void setHowManyQuestionsByUser(String button) {
         if (button.equals("5 satunnaista")) {
             setHowManyQuestions(5);
@@ -64,14 +76,34 @@ public class ItEnglishService {
         }
         statsService.setTotalQuestions(howManyQuestions);
     }
-    
 
+    /**
+     * Metodi arpoo Random-luokan random-olion avulla kysyttävän sanan
+     * kysyttävien sanojen listasta. Arvonnan jälkeen metodi poistaa sanan
+     * listasta.
+     *
+     * @return Palauttaa arvotun sanan.
+     */
     public String randomWord() {
         String randomWord = currentSet.get(random.nextInt(currentSet.size()));
         currentSet.remove(randomWord);
         return randomWord;
     }
 
+    /**
+     * Metodi tarkistaa vastauksen oikeellisuuden.
+     * <p>
+     * Käyttäjän kirjoittamaa vastausta verrataan kysytyn sanan (avaimen)
+     * oikeaan käännökseen (arvoon). Ennen vertailua metodi siistii käyttäjän
+     * syötteen alusta ja lpusta mahdolliset turhat välilyönnit. Vertaillessa
+     * vastauksen oikeellisuutta metodi välitä kirjainten koosta.
+     *
+     * @param input Käyttäjän kirjoittama vastaus
+     * @param word Kysytty sana
+     * @param difficulty Valittu vaikeustaso suomenkielisenä
+     * @return Palauttaa merkkijono-muotoisen palautteen vastauksen
+     * oikeellisuudesta.
+     */
     public String checkUserInput(String input, String word, String difficulty) {
 
         if (difficulty.equals("Aloittelija")) {
@@ -96,6 +128,13 @@ public class ItEnglishService {
         return "Vastauksesi \"" + input + "\" oli oikein!";
     }
 
+    /**
+     * Metodi tarkistaa, onko kysyttävä sana lyhenne ja palauttaa sen
+     * perusteella ohjetekstin.
+     *
+     * @param word Kysyttävä sana
+     * @return Palauttaa ohjetekstin.
+     */
     public String infoText(String word) {
         if (checkIfAcronym(word)) {
             return "Kirjoita auki lyhenne:";
@@ -105,10 +144,23 @@ public class ItEnglishService {
 
     }
 
+    /**
+     * Metodi tarkistaa, onko sanan ensimmäinen kirjain iso. Jos on, niin sana
+     * on lyhenne ja metodi palauttaa true. Muuten metodi palauttaa false.
+     *
+     * @param word Kysyttävä sana
+     * @return Palauttaa totuusarvon sen perusteella, onko sana lyhenne vai ei.
+     */
     public boolean checkIfAcronym(String word) {
         return Character.isUpperCase(word.charAt(0));
     }
-    
+
+    /**
+     * Metodi tarkistaa sanaston koon.
+     *
+     * @param difficulty Valittu vaikeustaso englanninkielisenä
+     * @return Palauttaa sanaston koon kokonaislukuna.
+     */
     public int totalWords(String difficulty) {
         return vocabularyDao.getByDifficulty(difficulty).getVocabulary().size();
     }

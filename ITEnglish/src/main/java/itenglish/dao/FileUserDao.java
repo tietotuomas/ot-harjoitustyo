@@ -1,4 +1,3 @@
-
 package itenglish.dao;
 
 import itenglish.domain.User;
@@ -7,7 +6,6 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 
 public class FileUserDao implements UserDao {
 
@@ -21,7 +19,7 @@ public class FileUserDao implements UserDao {
 
     }
 
-    private void loadUsers(String file) throws Exception{
+    private void loadUsers(String file) throws Exception {
         try {
             Scanner fileReader = new Scanner(new File(file));
 
@@ -39,7 +37,11 @@ public class FileUserDao implements UserDao {
 
         }
     }
-    
+
+    /**
+     * Metodi tallentaa käyttäjätiedot oliomuuttujassa määriteltyyn tiedostoon
+     * file.
+     */
     @Override
     public void save() throws Exception {
         try (FileWriter writer = new FileWriter(file)) {
@@ -48,24 +50,33 @@ public class FileUserDao implements UserDao {
                         + user.getBeginner() + "," + user.getAverage() + "," + user.getMaster() + "\n");
             }
         } catch (Exception e) {
-            System.out.println("Tiedostoon tallentaminen ei onnistunut: " + e.getMessage());
 
-        } 
+        }
     }
 
-//    @Override
-//    public List<User> getAll() {
-//        System.out.println(users);
-//        return users;
-//    }
-
+    /**
+     * Metodi luo parametriensa perusteella uuden käyttäjän, tallentaa sen
+     * users-listaan (luokan oliomuuttuja) ja tallentaa sen myös
+     * pysyväistallennukseen kutsumalla save-metodia.
+     *
+     * @see FileUserDao#save()
+     * @param käyttäjätunnus
+     * @param salasana
+     */
     @Override
     public void create(String username, String password) throws Exception {
         users.add(new User(username, password));
         save();
     }
 
-
+    /**
+     * Palauttaa nimen perusteella user-tyyppisen olion tai null, jos
+     * users-listasta ei löydy käyttäjää parametrin mukaisella nimellä.
+     *
+     * @param käyttäjätunnus
+     * @return Palauttaa user-tyyppisen olion tai null, jos käyttäjäkannasta
+     * löytyy
+     */
     @Override
     public User findByName(String name) {
         for (User user : users) {
@@ -74,7 +85,7 @@ public class FileUserDao implements UserDao {
             }
         }
         return null;
-        
+
     }
 
 }

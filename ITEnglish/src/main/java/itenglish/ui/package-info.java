@@ -1,6 +1,4 @@
-
 /**
- * user interface
+ * Käyttöliittymä
  */
-
 package itenglish.ui;

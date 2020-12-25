@@ -1,9 +1,8 @@
-
 package itenglish.ui;
 
 import itenglish.dao.FileUserDao;
 import itenglish.dao.FileVocabularyDao;
-import itenglish.domain.ItEnglishService;
+import itenglish.domain.QuestionService;
 import itenglish.domain.UserService;
 import itenglish.domain.StatsService;
 import java.io.FileInputStream;
@@ -35,10 +34,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
-
 public class ItEnglishUi extends Application {
 
-    private ItEnglishService itEnglishService;
+    private QuestionService itEnglishService;
     private UserService userService;
     private StatsService statsService;
 
@@ -57,7 +55,7 @@ public class ItEnglishUi extends Application {
         FileUserDao userdao = new FileUserDao(properties.getProperty("users"));
 
         statsService = new StatsService(userdao);
-        itEnglishService = new ItEnglishService(vocabularyDao, statsService);
+        itEnglishService = new QuestionService(vocabularyDao, statsService);
         userService = new UserService(userdao);
 
     }
@@ -83,7 +81,6 @@ public class ItEnglishUi extends Application {
         Button loginButton = new Button("Kirjaudu sisään");
         Button createButton = new Button("Luo uusi tunnus");
         Button exitButton = new Button("Sulje sovellus");
-//       värejä? loginButton.setBackground(new Background(new BackgroundFill(Color.DEEPPINK, null, null)));
 
         GridPane layout = new GridPane();
         HBox bottomLink = new HBox();
@@ -350,17 +347,17 @@ public class ItEnglishUi extends Application {
         rootPane.getChildren().addAll(infoLabel, layout, bottomRightLink);
         rootPane.setBackground(new Background(new BackgroundFill(Color.LIGHTGREY, null, null)));
 
-        Scene studyScene = new Scene(rootPane, 450, 350);
+        Scene studyScene = new Scene(rootPane, 450, 250);
 
         primaryStage.setTitle("Harjoitus");
         primaryStage.setScene(studyScene);
 
     }
-    
+
     public void feedback(Stage primaryStage, String message, String feedback) {
         Label wordLabel = new Label(feedback);
         Label infoLabel = new Label(message);
-        
+
         infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
         wordLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
 
@@ -406,8 +403,6 @@ public class ItEnglishUi extends Application {
         primaryStage.setTitle("Palaute");
         primaryStage.setScene(studyScene);
 
-   
-        
     }
 
     public void stats(Stage primaryStage) {
@@ -466,7 +461,6 @@ public class ItEnglishUi extends Application {
         masterColumn.setStyle("-fx-alignment: CENTER;");
         masterColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getMasterRecord()) + " (" + itEnglishService.totalWords("master") + ")"));
 
-
         ObservableList<String> list = FXCollections.observableArrayList("");
         table.setItems(list);
 
@@ -494,8 +488,4 @@ public class ItEnglishUi extends Application {
 
     }
 
-    @Override
-    public void stop() {
-
-    }
 }
