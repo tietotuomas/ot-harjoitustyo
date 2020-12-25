@@ -2,7 +2,7 @@
 
 ## Sovelluksen rakenne ja riippuvuudet
 
-Sovelluks hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Sovelluslogiikka, käyttöliittymä ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallenuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi arkkitehtuurin vuoksi olla suhteellisen kivutonta.
+Sovelluks hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Sovelluslogiikka, käyttöliittymä ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallennuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi arkkitehtuurin vuoksi olla suhteellisen kivutonta.
  
 ### Pakkauskaavio
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UML-kaavio.png?raw=true">  
@@ -11,8 +11,6 @@ Pakkauskaavioon on merkattu pakkauksien ja luokkien väliset riippuvuudet. Sovel
 ## Käyttöliittymä
 
 ## Sovelluslogiikka  
-
-<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Uuden%20satunnaisen%20sanan%20hakeminen.png?raw=true">  
 
 ## Pysyväistallennus
 
@@ -39,6 +37,8 @@ SaaS, Software as a Service
 Kullakin rivillä on ensiksi käännettävä sana/lyhenne, jota seuraa pilkulla ja (sanaston luettavuuden kohentamiseksi) välilyönnillä eroteltuna käännös ko. sanaan.
 
 ## Toiminnallisuudet
+
+<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Uuden%20satunnaisen%20sanan%20hakeminen.png?raw=true">  
 
 ## Sovelluksen arkkitehtuurin ja toiminnallisuuksien ongelmat/vajaavaisudet
 
