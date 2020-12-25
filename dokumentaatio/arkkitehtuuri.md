@@ -43,14 +43,11 @@ Kullakin rivillä on ensiksi käännettävä sana/lyhenne, jota seuraa pilkulla 
 ## Sovelluksen arkkitehtuurin ja toiminnallisuuksien ongelmat/vajaavaisudet
 
 ### Käyttöliittymä
-Käyttöliittymä sisältää huomattavan määrän toisteista koodia. Käyttöliittymän voisi rakentaa päätason asettelun ja alinäkymien pohjalle, niin että näkymät jakaisivat jonkinlaisen yhteisen valikon. Käyttöliittymä sisältää muitakin ratkaisuja ja toiminnallisuuksia, joita voisi yksinkertaistaa koodin tasolla.
-
-### Koodin toisteisuus
-Myös DAO-toteutuksissa on hieman toisteista koodia.
+Sovelluksen ilmeisin ongelma-alue lienee sen käyttöliittymä. Käyttöliittymä on toteutettu vain yhden luokan sisällä ja sisältää huomattavan määrän toisteista koodia. Käyttöliitymän voisi siis eriyttää useaksi eri luokaksi ja/tai toteuttaa isommalla määrällä yksinkertaisempia metodeja. Käyttöliittymän voisi myös rakentaa päätason asettelun ja alinäkymien pohjalle niin, että näkymät jakaisivat jonkinlaisen yhteisen valikon, eikä uutta näkymää tarvitsisi joka kertaa luoda tyhjästä (niin kuin nyt). Käyttöliittymän koodista löytyy varmasti myös muita ratkaisuja, joita voisi toteuttaa tarkoituksenmukaisemmalla tavalla.
 
 ### Riippuvuudet
 QuestionService-luokka on riippuvainen StatsService-luokasta. Toiminnallisuudet olisi mahdollista toteuttaa sovelluksen rakennetta hieman muokkaamalla myös ilman tätä "turhaa" riippuvuutta.
 
 ### Sanaston muokkaus
-Sovellus ei sisällä toiminnallisuutta, jolla sanastoa voitaisiin suoraan muokata. Nyt sanoja voidaan lisätä/poistaa vain tekstitiedoston kautta (sovellus on kuitenkin rakennettu niin, ettei tämä riko toiminnallisuuksia).
+Sovellus ei sisällä toiminnallisuutta, jolla sanastoa voitaisiin suoraan muokata. Nyt sanoja voidaan lisätä/poistaa vain tekstitiedoston kautta (sovellus on kuitenkin rakennettu niin, ettei tämä riko sovelluksen toimintaa).
 
