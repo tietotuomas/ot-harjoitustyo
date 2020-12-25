@@ -21,8 +21,8 @@ Sovelluksen juureen sijoitettu konfiguraatiotiedosto [config.properties](https:/
 Sovellus tallettaa käyttäjät seuraavalla tavalla:
 
 <pre>
-Testaaja,Testaaja,0,0,0
-Käyttäjä,salasana,15,12,3
+käyttäjä,salasana,0,0,0
+Testaaja,testi,15,12,3
 </pre>
 
 Kullakin rivillä on ensiksi käyttäjän kirjautumistiedot - käyttäjätunnus ja salasana - joiden jälkeen käyttäjän ennätyspisteet kolmella eri vaikeustasolla. Tiedot erotellaan pilkulla.
