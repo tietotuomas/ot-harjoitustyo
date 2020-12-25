@@ -4,7 +4,7 @@
  
 ### Pakkauskaavio
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UML-kaavio.png?raw=true">  
-Pakkauskaavioon on merkattu pakkauksien ja luokkien väliset riippuvuudet. Sovelluksessa on pyritty noudattamaan kerrosarkkitehtuurin periaatteita ja ehkäisemään riippuvuuksia. Pakkaus itenglish.ui on riippuvainen pakkauksesta itenglish.domain, mutta ei pakkauksesta itenglish.dao. Pakkauksen ui luokassa ItEnglishUI käsitellään dao-pakkauksen luokkia vain riippuvuuksien injektointiin. Domain pakkaus on riippuvainen pakkauksesta dao.
+Pakkauskaavioon on merkattu pakkauksien ja luokkien väliset riippuvuudet. Sovelluksessa on pyritty noudattamaan kerrosarkkitehtuurin periaatteita ja ehkäisemään riippuvuuksia. Pakkaus itenglish.ui on riippuvainen pakkauksesta itenglish.domain, mutta ei pakkauksesta itenglish.dao. Pakkauksen ui luokassa ItEnglishUi käsitellään dao-pakkauksen luokkia vain riippuvuuksien injektointiin. Domain-pakkaus on riippuvainen pakkauksesta dao.
 
 ## Soveluslogiikka  
 
