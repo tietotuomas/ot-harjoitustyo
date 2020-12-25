@@ -22,20 +22,24 @@ Sovelluslogiikka on pyritty eriyttämään kokonaan ko. käyttöliittymäluokast
 Sovelluslogiikka on domain-pakkauksen vastuulla. Vocabulary on sovelluksen yksitäistä sanastoa edustava luokka ja User käyttäjää edustava luokka. Varsinainen sovelluslogiikka ja toiminnallisuudet ovat QuestionService-, UserService- ja StatsService-luokkien vastuulla. 
 
 QuestionService-luokan vastuualueena on erityisesti kysyttävien sanojen ja niihin liittyvien vastausten käsittely.
+
+UserService-luokan vastuualueena on erityisesti käyttäjien kirjautumis- ja rekisteröitymistoimintojen käsittely.
+
+StatsService-luokan vastuualueena on erityisesti tilastojen ja kyselyjen jälkeisten palautteiden käsittely.
+
 ## Pysyväistallennus 
-Tiedostojen luku- ja tallennustoiminnot on eriytettu DAO-suunnittelumallin mukaisesti.
-Sovellus lukee ja tallentaa käyttäjien tiedot erilliseen tekstitiedostoon. Sovellus myös lukee käännettävät sanat kolmesta erillisestä tekstitiedostosta.
+Tiedostojen luku- ja tallennustoiminnot on eriytettu DAO-suunnittelumallin mukaisesti dao-pakkauksen alle. FileUserDao toteuttaa UserDao-rajapinnan ja vastaa käyttäjätietojen käsittelystä, mm. käyttäjätietojen tallentamisesta erilliseen tekstitiedostoon. FileVocabularyDao toteuttaa VocabularyDao-rajapinnan ja vastaa sanastojen käsittelystä, mm. sanostojen lukemisen kolmesta erillisestä tekstitiedostosta.
 
-Sovelluksen juureen sijoitettu konfiguraatiotiedosto [config.properties](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/ITEnglish/config.properties) määrittelee tiedostojen nimet.
+Sovelluksen juureen sijoitettu konfiguraatiotiedosto [config.properties](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/ITEnglish/config.properties) määrittelee erillisten tekstitiedostojen nimet.
 
-Sovellus tallettaa käyttäjät seuraavalla tavalla:
+Sovellus tallettaa käyttäjätiedot seuraavalla tavalla:
 
 <pre>
 käyttäjä,$2a$10$2ay8znHtmEwleQNfgbyPU.UPg55y0QIP8xB/exEXfoo0exTdFXAgK,0,0,0
 Testaaja,$2a$10$UtXQXjMEd1LFq7gksG4yA.1742St0o5uJ/LYHIZxGw3d65S.C5mxe,15,12,3
 </pre>
 
-Kullakin rivillä on ensiksi käyttäjän kirjautumistiedot - käyttäjätunnus ja salasana - joiden jälkeen käyttäjän ennätyspisteet kolmella eri vaikeustasolla. Tiedot erotellaan pilkulla. Salasana on salakirjoitettu BCrypt-kirjaston avulla.
+Kullakin rivillä on ensiksi käyttäjän kirjautumistiedot - käyttäjätunnus ja salasana - joiden jälkeen käyttäjän ennätyspisteet kaikilla kolmella eri vaikeustasolla. Tiedot erotellaan pilkulla. Salasana on salakirjoitettu BCrypt-kirjaston avulla.
 
 Sanasto on talletettu seuraavalla tavalla:
 
