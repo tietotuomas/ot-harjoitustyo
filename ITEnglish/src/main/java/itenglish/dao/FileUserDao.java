@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ *
+ * Luokka toteuttaa UserDao-rajapinnan ja vastaa käyttäjätietojen käsittelystä.
+ */
 public class FileUserDao implements UserDao {
 
     private List<User> users;
