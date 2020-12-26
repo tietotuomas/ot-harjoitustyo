@@ -1,7 +1,7 @@
 # Arkkitehtuurikuvaus  
 
 ## Sovelluksen rakenne ja riippuvuudet  
-Sovelluks hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Käyttöliittymä, sovelluslogiikka ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallennuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi arkkitehtuurin vuoksi olla suhteellisen kivutonta.
+Sovelluks hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Käyttöliittymä, sovelluslogiikka ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallennuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi käytetyn arkkitehtuurin vuoksi olla suhteellisen kivutonta.
  
 ### Pakkauskaavio
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UML-kaavio.png?raw=true">  
@@ -59,7 +59,9 @@ Seuraavaksi createUser-metodi kutsuu UserDao-luokan metodia findByName parametri
 Lopuksi createUser metodi kutsuu userDaon metodia create, joka luo parametriensa (käyttäjätunnus ja salakirjoitettu salasana) perusteella uuden ilmentymän User-luokasta, tallentaa sen users-listaan (oliomuuttuja) ja tallentaa sen myös pysyväistallennukseen kutsumalla save-metodia. Prosessi viedään loppuun, kun createUser palauttaa tämän jälkeen ItEnglishUi-luokalle merkkijonon "Success", jonka perusteella käyttöliittymän näkymä vaihdetaan.
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Palautteen%20luonti.png?raw=true">
-
+Sekvenssiokaaviossa on kuvattu tilanne, jossa käyttäjä vastaa kysymyssarjan viimeisen kysymykseen. Käyttäjän painettua "Lukitse vastaus"-nappia, tapahtumankäsittelijä kutsuu ensiksi StatsService-luokan metodia questionAnswered, joka poistaa kokonaisluku-muotoisesta kysymyskirjanpidosta yhden kysymyksen. Seuraavalla kutsulla getHowManyQuestions tarkistetaan jäljellä olevien kysymyksien määrä. GetHowManyQuestions-metodin palauttama arvo on 0, joten kysymyssarja on käyty loppuun.<br><br/>
+Tämän jälkeen alkaa varsinaisen palautteen hakuprosessi. Tapahtumankäsittelijä kutsuu StatsServicen metodia feedback parametrilla "Mestari", parametri kertoo kysymyssarjan vaikeustason. Ensiksi StatServicen feedback-metodi laskee countScore-apumetodin avulla käyttäjän oikeiden vastauksien ja kaikkien vastauksien suhteen. Seuraavaksi feedback-metodi suorittaa palautteen luomiseksi hieman sovelluslogiikkaa, jota sekvenssikaavioin ei ole merkitty: metodi hakee countScore-apumetodin tarjoaman suhdeluvun perusteella kaksiuloitteisesta taulukosta suhdelukua vastaavan "sisemmän" taulukon. Sitten feedback-metodi arpoo tästä valitusta, sisemmästä taulukosta merkkijono-muotoisen palautteen Random-luokasta luodun random-olion avulla.
+Tekstimuotoisen palautteen generoimisen jälkeen feedback-metodi tarkistuttaa checkIfRecord-metodin avulla, ylittääkö käyttäjän oikeiden vastauksien määrä vanhan ennätyksen. CheckIfRecord kutsuu UserDaon metodia findByName parametrinaan käyttäjän nimi. Tässä skenaariossa oikeiden vastauksien määrä oikeuttaa (CheckIfRecord-metodin tekemän vertailun perusteella) uuteen ennätykseen. Uusi ennätys tallennetaan UserDaon kautta käyttäjän tietoihin, myös pysyväistallennuksen puolelle. Lopuksi feedback-metodi lisää palautettavaan merkkijonoon maininnan uudesta ennätyksestä ja palauttaa lopullisen merkkijonon ItEnglishUi-luokalle, joka näyttää palautteen käyttäjälle uudessa näkymässä.
 
 ## Sovelluksen arkkitehtuurin ja toiminnallisuuksien ongelmat/vajaavaisudet  
 
