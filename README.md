@@ -50,7 +50,7 @@ Checkstylen määrittelemät tarkistukset suoritetaan komennolla
  mvn jxr:jxr checkstyle:checkstyle
 ```
 
-Raporttia mahdollisista virheistä voi tarkastella avaamalla selaimella tiedosto *target/site/checkstyle.html*
+Raporttia mahdollisista virheistä voi tarkastella avaamalla esimerkiksi selaimella tiedosto *target/site/checkstyle.html*
 
 
 ## Releaset
