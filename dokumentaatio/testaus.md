@@ -4,7 +4,7 @@ Sovellusta on testattu JUnitilla luoduilla automaattisilla yksikkö- ja integraa
 
 ## Yksikkö- ja integraatiotestaus
 
-Yksikkö- ja integraatiotestauksessa on pyritty monipuolisuuteen ja korkeaan kattavuuteen, mutta aivan kaikille haaroille ja reunatapauksille ei ole luotu testejä. Nämä on huomioitu järjestelmätestauksessa.
+Yksikkö- ja integraatiotestauksessa on pyritty monipuolisuuteen ja korkeaan kattavuuteen, mutta aivan kaikille haaroille ja reunatapauksille ei ole luotu testejä. Tämä on huomioitu järjestelmätestauksessa.
 
 Sovelluslogiikan integraatiotestauksessa on hyödynnetty valekomponentteja FakeUserDao ja FakeVocabularyDao, joiden avulla on pystytty kiertämään pysyväistallennuksen aiheuttamat ongelmat (kuten jatkuvasti muuttuva sisältö) testauksen kontekstissa. DAO-luokkien testauksessa on puolestaan hyödynnetty JUnitin TemporaryFolder-ruleja, joiden avulla luodaan väliaikasia tiedostoja testauksen ajaksi.
 
