@@ -51,7 +51,7 @@ SaaS, Software as a Service
 Kullakin rivillä on ensiksi käännettävä sana/lyhenne, jota seuraa pilkulla ja (sanaston luettavuuden kohentamiseksi) välilyönnillä eroteltuna käännös ko. sanaan.
 
 ## Toiminnallisuuksia  
-Seuraavassa joitakin oleellisia toiminnallisuuksia yksityiskohtaisesti läpikäytynä:
+Seuraavassa joitakin oleellisia toiminnallisuuksia tarkemmin läpikäytynä:
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/K%C3%A4ytt%C3%A4j%C3%A4tilin%20luonti.png?raw=true">  
 Sekvenssiokaaviossa on kuvattu tilanne, jossa käyttäjä luo uuden käyttäjätilin. Käyttäjän painettua "Luo uusi tunnus"-nappia, tapahtumankäsittelijä kutsuu UserServicen metodia createUser parametreinaan käyttäjän tekstikenttiin syöttämät tiedot (käyttäjätunnus ja salasana).  UserServicen createUser-metodi validoi ensiksi syötteet kutsumalla apumetodeja isNameEligible ja isPasswordEligible. Syötteet "Testaaja" ja "12345" ovat ohjeistuksen mukaisia.<br><br/>
