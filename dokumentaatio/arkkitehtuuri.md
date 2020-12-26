@@ -52,7 +52,9 @@ Kullakin rivillä on ensiksi käännettävä sana/lyhenne, jota seuraa pilkulla 
 
 ## Toiminnallisuudet  
 
-<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Uuden%20satunnaisen%20sanan%20hakeminen.png?raw=true">  
+<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/K%C3%A4ytt%C3%A4j%C3%A4tilin%20luonti.png?raw=true">
+<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/Palautteen%20luonti.png?raw=true">
+
 
 ## Sovelluksen arkkitehtuurin ja toiminnallisuuksien ongelmat/vajaavaisudet  
 
