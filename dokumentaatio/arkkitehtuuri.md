@@ -1,7 +1,7 @@
 # Arkkitehtuurikuvaus  
 
 ## Sovelluksen rakenne ja riippuvuudet  
-Sovelluks hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Käyttöliittymä, sovelluslogiikka ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallennuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi käytetyn arkkitehtuurin vuoksi olla suhteellisen kivutonta.
+Sovellus hyödyntää kerrosarkkitehtuurin ja DAO-suunnittelumallin periaatteita. Käyttöliittymä, sovelluslogiikka ja tietojen tallentaminen/lukeminen on pyritty eriyttämään toisistaan. Pysyväistallennuksen muotona käytetään tekstitiedostoja, mutta esimerkiksi tietokantoihin siirtyminen pitäisi käytetyn arkkitehtuurin vuoksi olla suhteellisen kivutonta.
  
 ### Pakkauskaavio
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/UML-kaavio.png?raw=true">  
@@ -10,7 +10,7 @@ Pakkauskaavioon on merkattu pakkauksien ja luokkien väliset riippuvuudet. Sovel
 ## Käyttöliittymä  
 Sovelluksen käyttöliittymä on ui-pakkauksen ItEnglishUi-luokan vastuulla. Käyttöliittymä on rakennettu JavaFX-kirjastolla. Se sisältää kuusi eri näkymää:
 - login ("Kirjaudu")
-- newUser ("Käyttäjätili"
+- newUser ("Käyttäjätili")
 - chooseMode ("Vaikeustaso")
 - study ("Harjoitus")
 - feedback ("Palaute")
@@ -30,7 +30,7 @@ StatsService-luokan vastuualueena on erityisesti tilastojen ja kyselyjen jälkei
 Sovelluslogiikan(kin) toimintaa havainnollistetaan Toiminnallisuuksia-otsikon alla.
 
 ## Pysyväistallennus 
-Tiedostojen luku- ja tallennustoiminnot on eriytettu DAO-suunnittelumallin mukaisesti dao-pakkauksen alle. FileUserDao toteuttaa UserDao-rajapinnan ja vastaa käyttäjätietojen käsittelystä, mm. käyttäjätietojen tallentamisesta erilliseen tekstitiedostoon. FileVocabularyDao toteuttaa VocabularyDao-rajapinnan ja vastaa sanastojen käsittelystä, mm. sanostojen lukemisen kolmesta erillisestä tekstitiedostosta.
+Tiedostojen luku- ja tallennustoiminnot on eriytetty DAO-suunnittelumallin mukaisesti dao-pakkauksen alle. FileUserDao toteuttaa UserDao-rajapinnan ja vastaa käyttäjätietojen käsittelystä, mm. käyttäjätietojen tallentamisesta erilliseen tekstitiedostoon. FileVocabularyDao toteuttaa VocabularyDao-rajapinnan ja vastaa sanastojen käsittelystä, mm. sanastojen lukemisen kolmesta erillisestä tekstitiedostosta.
 
 Sovelluksen juureen sijoitettu konfiguraatiotiedosto [config.properties](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/ITEnglish/config.properties) määrittelee erillisten tekstitiedostojen nimet.
 
