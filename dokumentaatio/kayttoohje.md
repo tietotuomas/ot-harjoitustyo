@@ -41,7 +41,7 @@ Jos käyttäjän luominen onnistuu, palataan kirjautumisnäkymään.
 
 ## Valintojen tekeminen
 
-Onnistuneen kirjautumisen myötä siirrytään vaikeustason ja käännettävien sanojen lukumäärän valintaan. Ohjelma ohjeistaa käyttäjää vaikeustasojen eroista. Painamalla *Valitse* vahvistetaan valinnat. Painamalla *Kirjaudu ulos* päästään takaisin kirjautumisnäkymään.
+Onnistuneen kirjautumisen myötä siirrytään vaikeustason ja käännettävien sanojen lukumäärän valintaan. Ohjelma ohjeistaa käyttäjää vaikeustasojen eroista. Painamalla *Valitse* vahvistetaan valinnat. Painamalla *Tarkastele tilastoja* päästään tilastointinäkymään. Painamalla *Kirjaudu ulos* päästään takaisin kirjautumisnäkymään.
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/vaikeustaso.png?raw=true">
 
@@ -50,5 +50,18 @@ Onnistuneen kirjautumisen myötä siirrytään vaikeustason ja käännettävien 
 Harjoitusnäkymässä käännetään sanoja ohjeistuksen mukaan. Painamalla *Lukitse vastaus* siirrytään seuraavaan sanaan ja näytetään samalla oikea vastaus. Painamalla *Lopeta* voidaan harjoitus lopettaa ja palata valintanäkymään (jo ennen kuin valittu määrä käännettävä sanoja on näytetty).
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/harjoitus.png?raw=true">
+
+## Palaute
+
+Kun kaikki kysymyssarjan sanat on käyty läpi, antaa sovellus palautetta suoritukseen perustuen. Painamalla *Takaisin* päästään vaikeustason valintaan. Painamalla "Tilastot" päästään tilastointinäkymään.
+
+<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/palaute.png?raw=true">
+
+## Tilastot
+
+Tilastointinäkymässä näytetään kirjautuneen käyttäjän henkilökohtaiset parhaat tulokset (eniten oikeita vastauksia) jokaisella vaikeustasolla. Jos käyttäjä on vastannut oikein kaikkiin tietyn vaikeustason kysymyksiin, ansaitsee hän saavutuksestaan ruksin ko. vaikeustason valintaruutuun. Painamalla *Takaisin* päästään vaikeustason valintaan.
+
+<img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/tilastot.png?raw=true">
+
 
 
