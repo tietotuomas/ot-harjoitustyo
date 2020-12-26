@@ -12,7 +12,7 @@ Käyttöliittymän rakentava koodi eli käytännössä ItEnglishUi on jätetty p
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/raportti.png" width="800">
 
-Relevantteja testejä jäi luomatta mm. muutamalle UserService-luokan haaralle, jossa kutsuttiin DAO-luokan metodia tekstitiedostoon kirjoittamista varten. Testaamatta jäi myös User- ja Vocabulary-olioiden equals-metodit, joita sovellu
+Relevantteja testejä jäi luomatta mm. muutamalle UserService-luokan haaralle, jossa kutsuttiin DAO-luokan metodia tekstitiedostoon kirjoittamista varten.
 
 ## Järjestelmätestaus
 
