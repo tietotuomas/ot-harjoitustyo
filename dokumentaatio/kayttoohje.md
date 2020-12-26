@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [itenglish.jar](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/v1.0)
+Lataa tiedosto [itenglish.jar](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/v1.0) ja vaaditut tekstiedostot.
 
 ## Konfigurointi
 
