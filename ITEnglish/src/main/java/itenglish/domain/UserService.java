@@ -5,7 +5,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * Sovelluslogiikan luokka, joka vastaa käyttäjien kirjautumis- ja
- * rekiteröitymistoiminnoista.
+ * rekisteröitymistoiminnoista.
  */
 public class UserService {
 

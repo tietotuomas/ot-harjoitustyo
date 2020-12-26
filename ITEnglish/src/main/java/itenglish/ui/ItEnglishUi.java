@@ -36,7 +36,7 @@ import javafx.stage.Stage;
 
 public class ItEnglishUi extends Application {
 
-    private QuestionService itEnglishService;
+    private QuestionService questionService;
     private UserService userService;
     private StatsService statsService;
 
@@ -55,7 +55,7 @@ public class ItEnglishUi extends Application {
         FileUserDao userdao = new FileUserDao(properties.getProperty("users"));
 
         statsService = new StatsService(userdao);
-        itEnglishService = new QuestionService(vocabularyDao, statsService);
+        questionService = new QuestionService(vocabularyDao, statsService);
         userService = new UserService(userdao);
 
     }
@@ -264,8 +264,8 @@ public class ItEnglishUi extends Application {
         confirmButton.setOnAction(e -> {
             RadioButton selectedDifficulty = (RadioButton) setDifficulty.getSelectedToggle();
             RadioButton selectedNumber = (RadioButton) setNumber.getSelectedToggle();
-            itEnglishService.createNewSet(selectedDifficulty.getText());
-            itEnglishService.setHowManyQuestionsByUser(selectedNumber.getText());
+            questionService.createNewSet(selectedDifficulty.getText());
+            questionService.setHowManyQuestionsByUser(selectedNumber.getText());
             String difficulty = selectedDifficulty.getText();
             String message = "Valitsit vaikeustason " + difficulty + ".";
             study(primaryStage, difficulty, message);
@@ -293,8 +293,8 @@ public class ItEnglishUi extends Application {
     }
 
     public void study(Stage primaryStage, String difficulty, String message) {
-        Label wordLabel = new Label(itEnglishService.randomWord());
-        Label infoLabel = new Label(message + "\n" + itEnglishService.infoText(wordLabel.getText()));
+        Label wordLabel = new Label(questionService.randomWord());
+        Label infoLabel = new Label(message + "\n" + questionService.infoText(wordLabel.getText()));
         infoLabel.setFont(Font.font("Tahoma", FontWeight.LIGHT, 14));
 
         wordLabel.setFont(Font.font("Tahoma", FontWeight.BOLD, 14));
@@ -327,9 +327,9 @@ public class ItEnglishUi extends Application {
         layout.setBackground(new Background(new BackgroundFill(Color.DARKGREY, null, null)));
 
         answerButton.setOnAction(e -> {
-            String feedbackForAnswer = itEnglishService.checkUserInput(userInput.getText(), wordLabel.getText(), difficulty);
-            itEnglishService.questionAnswered();
-            if (itEnglishService.getHowManyQuestions() == 0) {
+            String feedbackForAnswer = questionService.checkUserInput(userInput.getText(), wordLabel.getText(), difficulty);
+            questionService.questionAnswered();
+            if (questionService.getHowManyQuestions() == 0) {
                 String feedbackForScore = statsService.feedback(difficulty);
                 feedback(primaryStage, feedbackForAnswer, feedbackForScore);
             } else {
@@ -339,7 +339,7 @@ public class ItEnglishUi extends Application {
         });
 
         backButton.setOnAction(e -> {
-            itEnglishService.setHowManyQuestions(0);
+            questionService.setHowManyQuestions(0);
             chooseMode(primaryStage);
 
         });
@@ -429,21 +429,21 @@ public class ItEnglishUi extends Application {
 
         CheckBox checkBoxBeginner = new CheckBox("I survived beginner ItEnglish!");
         checkBoxBeginner.setDisable(true);
-        if (statsService.getBeginnerRecord() == itEnglishService.totalWords("beginner")) {
+        if (statsService.getBeginnerRecord() == questionService.totalWords("beginner")) {
             checkBoxBeginner.setSelected(true);
             checkBoxBeginner.setFont((Font.font("Times New Roman", FontWeight.BOLD, 12)));
         }
         checkBoxBeginner.setStyle("-fx-opacity: 1");
         CheckBox checkBoxAverage = new CheckBox("I survived average ItEnglish!");
         checkBoxAverage.setDisable(true);
-        if (statsService.getAverageRecord() == itEnglishService.totalWords("average")) {
+        if (statsService.getAverageRecord() == questionService.totalWords("average")) {
             checkBoxAverage.setSelected(true);
             checkBoxAverage.setFont((Font.font("Times New Roman", FontWeight.BOLD, 12)));
         }
         checkBoxAverage.setStyle("-fx-opacity: 1");
         CheckBox checkBoxMaster = new CheckBox("I survived master ItEnglish!");
         checkBoxMaster.setDisable(true);
-        if (statsService.getMasterRecord() == itEnglishService.totalWords("master")) {
+        if (statsService.getMasterRecord() == questionService.totalWords("master")) {
             checkBoxMaster.setSelected(true);
             checkBoxMaster.setFont((Font.font("Times New Roman", FontWeight.BOLD, 12)));
         }
@@ -453,13 +453,13 @@ public class ItEnglishUi extends Application {
 
         TableColumn<String, String> beginnerColumn = new TableColumn("Aloittelija");
         beginnerColumn.setStyle("-fx-alignment: CENTER;");
-        beginnerColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getBeginnerRecord()) + " (" + itEnglishService.totalWords("beginner") + ")"));
+        beginnerColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getBeginnerRecord()) + " (" + questionService.totalWords("beginner") + ")"));
         TableColumn<String, String> averageColumn = new TableColumn("Keskiverto");
         averageColumn.setStyle("-fx-alignment: CENTER;");
-        averageColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getAverageRecord()) + " (" + itEnglishService.totalWords("average") + ")"));
+        averageColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getAverageRecord()) + " (" + questionService.totalWords("average") + ")"));
         TableColumn<String, String> masterColumn = new TableColumn("Mestari");
         masterColumn.setStyle("-fx-alignment: CENTER;");
-        masterColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getMasterRecord()) + " (" + itEnglishService.totalWords("master") + ")"));
+        masterColumn.setCellValueFactory(data -> new ReadOnlyStringWrapper(String.valueOf(statsService.getMasterRecord()) + " (" + questionService.totalWords("master") + ")"));
 
         ObservableList<String> list = FXCollections.observableArrayList("");
         table.setItems(list);
