@@ -54,6 +54,11 @@ public class FileVocabularyDao implements VocabularyDao {
 
     }
 
+    public List<Vocabulary> getVocabularies() {
+        return vocabularies;
+    }
+    
+
     /**
      * Metodi etsii ja palauttaa vaikeustason perusteella Vocabulary-olion.
      *

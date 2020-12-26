@@ -42,6 +42,12 @@ public class FileUserDao implements UserDao {
         }
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
+    
+    
+
     /**
      * Metodi tallentaa käyttäjätiedot oliomuuttujassa määriteltyyn tiedostoon
      * file.
