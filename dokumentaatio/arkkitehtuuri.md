@@ -54,7 +54,7 @@ Kullakin rivillä on ensiksi käännettävä sana/lyhenne, jota seuraa pilkulla 
 Seuraavassa joitakin oleellisia toiminnallisuuksia yksityiskohtaisesti läpikäytynä:
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/K%C3%A4ytt%C3%A4j%C3%A4tilin%20luonti.png?raw=true">  
-Sekvenssiokaaviossa on kuvattu tilanne, jossa käyttäjä luo uuden käyttäjätilin. Käyttäjän painettua "Luo uusi tunnus"-nappia, tapahtumankäsittelijä kutsuu UserServicen metodia createUser parametreinaan käyttäjän tekstikenttiin syöttämät tiedot (käyttäjätunnus ja salasana).  UserServicen createUser-metodi validoi ensiksi syötteet kutsumalla apumetodeja isNameEligible ja isPasswordEligible. Syötteet "Testaaja" ja "12345" ovat ohjeistuksen mukaisia.  
+Sekvenssiokaaviossa on kuvattu tilanne, jossa käyttäjä luo uuden käyttäjätilin. Käyttäjän painettua "Luo uusi tunnus"-nappia, tapahtumankäsittelijä kutsuu UserServicen metodia createUser parametreinaan käyttäjän tekstikenttiin syöttämät tiedot (käyttäjätunnus ja salasana).  UserServicen createUser-metodi validoi ensiksi syötteet kutsumalla apumetodeja isNameEligible ja isPasswordEligible. Syötteet "Testaaja" ja "12345" ovat ohjeistuksen mukaisia.</br>  
 
 Seuraavaksi createUser-metodi kutsuu UserDao-luokan metodia findByName parametrinaan "Testaaja". FindByName-metodi tarkistaa käyttäjien nimet sisältävän listan avulla, ettei sovelluksen käyttäjäkannasta löydy samannimistä käyttäjää. Tässä tapauksessa ei löydy, ja metodi palauttaa null - käyttäjätunnus on siis uniikki. Nyt syötteet on todettu tallennuskelpoisiksi. Tätä varten createUser kutsuu vielä apumetodia createHashedPassword, joka saa parametrinaan salasanan "12345" ja palauttaa sen salatussa muodossa BCrypt-kirjaston muuntamana.
 
