@@ -32,7 +32,7 @@ Tiedostojen luku- ja tallennustoiminnot on eriytettu DAO-suunnittelumallin mukai
 
 Sovelluksen juureen sijoitettu konfiguraatiotiedosto [config.properties](https://github.com/tietotuomas/ot-harjoitustyo/blob/master/ITEnglish/config.properties) määrittelee erillisten tekstitiedostojen nimet.
 
-Sovellus tallettaa käyttäjätiedot seuraavalla tavalla:
+Sovellus tallettaa käyttäjätiedot tekstitiedostoon seuraavalla tavalla:
 
 <pre>
 käyttäjä,$2a$10$2ay8znHtmEwleQNfgbyPU.UPg55y0QIP8xB/exEXfoo0exTdFXAgK,0,0,0
@@ -41,7 +41,7 @@ Testaaja,$2a$10$UtXQXjMEd1LFq7gksG4yA.1742St0o5uJ/LYHIZxGw3d65S.C5mxe,15,12,3
 
 Kullakin rivillä on ensiksi käyttäjän kirjautumistiedot - käyttäjätunnus ja salasana - joiden jälkeen käyttäjän ennätyspisteet kaikilla kolmella eri vaikeustasolla. Tiedot erotellaan pilkulla. Salasana on salakirjoitettu BCrypt-kirjaston avulla.
 
-Sanasto on talletettu seuraavalla tavalla:
+Sanastot on talletettu tekstitiedostoihin seuraavalla tavalla:
 
 <pre>
 informaatiosodankäynti, information warfare 
