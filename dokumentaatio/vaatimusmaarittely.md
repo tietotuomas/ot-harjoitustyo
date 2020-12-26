@@ -48,7 +48,7 @@ Sovelluksessa on graafinen käyttöliittymä.
 
 ## Jatkokehitysideoita
 
-- tietokantojen hyödyntäminen tallennuksessa
+- tietokantojen hyödyntäminen pysyväistallennuksessa
 - monipuolisempaa tilastointia
 - pääkäyttäjä-luokan luominen
-- pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja lisätä sanastoa
+- pääkäyttäjälle mahdollisuus poistaa käyttäjätunnuksia ja muokata sanastoa
