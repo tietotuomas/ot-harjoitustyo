@@ -19,7 +19,7 @@ Sovelluksessa on graafinen käyttöliittymä.
 - käyttäjä voi rekisteröityä sovellukseen luomalla käyttäjätunnuksen ja siihen liittyvän salasanan
   - käyttäjätunnuksen täytyy olla uniikki
   - käyttäjätunnuksen ja salasanan täytyy olla sopivan pituinen
-  - salasana tallennetaan sovelluksen tietoihin suojattuna
+  - salasana tallennetaan sovelluksen pysyväistallenukseen asianmukaisesti suojattuna
 
 - käyttäjä voi kirjautua sovellukseen syöttämllä olemassa olevan käyttäjätunnuksen
   - jos käyttäjätunnusta ei löydy tai käyttäjätunnus ei täsmää salasanaan, ilmoittaa sovellus tästä
