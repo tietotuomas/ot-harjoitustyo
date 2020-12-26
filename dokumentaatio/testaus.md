@@ -8,7 +8,7 @@ Testauksessa on hyödynnetty Fake
 
 ### Testauskattavuus
 
-Käyttöliittymän rakentava koodi eli käytännössä ItEnglishUi on jätetty pois testikattavuusraportista. Tämä huomioonottaen sovelluksen testauksen rivikattavuus on 91% ja haarautumakattavuus 86%.
+Käyttöliittymän rakentava koodi eli käytännössä ItEnglishUi on jätetty pois testikattavuusraportista. Tämä huomioonottaen sovelluksen testauksen rivikattavuus on 92% ja haarautumakattavuus 88%.
 
 <img src="https://github.com/tietotuomas/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/raportti.png" width="800">
 
