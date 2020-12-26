@@ -54,4 +54,4 @@ Raporttia mahdollisista virheistä voi tarkastella avaamalla esimerkiksi selaime
 
 
 ## Releaset
-[Viikko 6](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/viikko6)
+[Loppupalautus](https://github.com/tietotuomas/ot-harjoitustyo/releases/tag/v1.0)
