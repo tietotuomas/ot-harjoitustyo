@@ -22,4 +22,4 @@ Järjestelmätestaus on suoritettu kokonaan manuaalisesti. Testauksessa on pyrit
 
 ## Sovellukseen jääneet laatuongelmat
 
-Sovellus ei ilmoita käyttäjälle kaikista virhetilanteista. Esimerkiksi jos sanasto-tiedostoja ei jostain syystä löydy, ei sovellus ilmoita tästä käyttäjälle millään tavalla.
+Sovellus ei iformoi käyttäjää kaikista virhetilanteista. Esimerkiksi jos sanasto-tiedostoja ei jostain syystä löydy, ei sovellus ilmoita tästä käyttäjälle millään tavalla.
