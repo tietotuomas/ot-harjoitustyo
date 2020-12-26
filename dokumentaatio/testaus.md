@@ -16,7 +16,7 @@ Relevantteja testejä jäi luomatta mm. muutamalle UserService-luokan haaralle, 
 
 ## Järjestelmätestaus
 
-Järjestelmätestaus on suoritettu kokonaan manuaalisesti. Testauksessa on pyritty huomioimaan tyypillisten käyttötapauksien lisäksi myös epätavallisimpia skenaariota, kuten ohjeistuksen vastaisia tai tyhjiä syötteitä. Sovellus testattu toimivaksi myös tilanteessa, jossa sanastotiedostoihin tehdään muutoksia, ts. sanoja lisätään tai poistetaan tekstitiedostoissa. Tällaisessa tapauksessa ominaisuudet toimivat odotetunlaisesti, kunhan sanoja on vähintään 10 per tiedosto. Esimerkiksi tilanteessa, jossa uusi sana tai sanoja lisätään beginner.txt-tiedostoon, käyttäjä menettää aikaisemmin ansaitun ruksin "I survived beginner ItEnglish"- valintaruudusta.
+Järjestelmätestaus on suoritettu kokonaan manuaalisesti. Testauksessa on pyritty huomioimaan tyypillisten käyttötapausten lisäksi myös epätavallisimpia skenaariota, kuten ohjeistuksen vastaisia tai tyhjiä syötteitä. Sovellus testattu toimivaksi myös tilanteessa, jossa sanastotiedostoihin tehdään muutoksia, ts. sanoja lisätään tai poistetaan tekstitiedostoissa. Tällaisessa tapauksessa ominaisuudet toimivat odotetunlaisesti, kunhan sanoja on vähintään 10 per tiedosto. Esimerkiksi tilanteessa, jossa uusi sana tai sanoja lisätään beginner.txt-tiedostoon, käyttäjä menettää aikaisemmin ansaitun ruksin "I survived beginner ItEnglish"- valintaruudusta.
 
 ## Sovellukseen jääneet laatuongelmat
 
