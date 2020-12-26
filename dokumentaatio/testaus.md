@@ -16,10 +16,10 @@ Käyttöliittymän rakentava koodi eli käytännössä ItEnglishUi on jätetty p
 
 Relevantteja testejä jäi luomatta mm. muutamalle UserService-luokan haaralle, jossa kutsuttiin DAO-luokan metodia tekstitiedostoon kirjoittamista varten.
 
-## Järjestelmätestaus
+## Järjestelmätestaus ja sovellukseen jääneet laatuongelmat
 
-Järjestelmätestaus on suoritettu kokonaan manuaalisesti. Testauksessa on pyritty huomioimaan tyypillisten käyttötapausten lisäksi myös epätavallisimpia skenaariota, kuten ohjeistuksen vastaisia tai tyhjiä syötteitä. Sovellus testattu toimivaksi myös tilanteessa, jossa sanastotiedostoihin tehdään muutoksia, ts. sanoja lisätään tai poistetaan tekstitiedostoissa. Tällaisessa tapauksessa ominaisuudet toimivat odotetunlaisesti, kunhan sanoja on vähintään 10 per tiedosto. Esimerkiksi tilanteessa, jossa uusi sana tai sanoja lisätään beginner.txt-tiedostoon, käyttäjä menettää aikaisemmin ansaitun ruksin "I survived beginner ItEnglish"- valintaruudusta.
+Järjestelmätestaus on suoritettu kokonaan manuaalisesti. Testauksessa on pyritty huomioimaan tyypillisten käyttötapausten lisäksi myös epätavallisimpia skenaariota, kuten ohjeistuksen vastaisia tai tyhjiä syötteitä. 
 
-## Sovellukseen jääneet laatuongelmat
+Sovellus testattu pääosin toimivaksi myös tilanteessa, jossa sanastotiedostoihin tehdään muutoksia, ts. sanoja lisätään tai poistetaan tekstitiedostoissa. Tilastointia lukuunottamatta ominaisuudet toimivat odotetunlaisesti, kunhan sanoja on vähintään 10 per tiedosto. Tilanteessa, jossa sanoja lisätään, myös tilastot toimivat. Esimerkiksi jos beginner.txt-tiedostoon lisätään sana, käyttäjä menettää aikaisemmin ansaitun ruksin "I survived beginner ItEnglish"- valintaruudusta, mutta voi ansaita sen taas uudestaan. Sen sijaan jos tiedoston kokonaissanamäärä laskee sanojen poistamisen seurauksena, ei tilastointi toimi enää täysin toivotulla tavalla.
 
-Sovellus ei informoi käyttäjää kaikista virhetilanteista. Esimerkiksi jos sanasto-tiedostoja ei jostain syystä löydy, ei sovellus ilmoita tästä käyttäjälle millään tavalla.
+Yleisenä ongelmana sovellus ei informoi käyttäjää kaikista virhetilanteista. Esimerkiksi jos sanasto-tiedostoja ei jostain syystä löydy, ei sovellus ilmoita tästä käyttäjälle millään tavalla.
