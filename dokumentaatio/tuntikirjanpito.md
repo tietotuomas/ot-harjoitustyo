@@ -23,4 +23,5 @@
 | 22.12 | 5    | UserServicen ja StatsServicen kehittelyä |
 | 23.12 | 9    | Koodin hiontaa, testien luontia |
 | 25.12 | 6    | Koodin tarkastelua, Javadoc, dokumentaatiota |
-| yht   | 76   |  | 
+| 26.12 | 7    | Pari testiä, koodin tarkastelua, dokumentaatiota |
+| yht   | 83   |  | 
